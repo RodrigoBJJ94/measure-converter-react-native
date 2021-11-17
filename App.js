@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 export default function App() {
   const [screen, setScreen] = useState('home');
-  const [measureOne, setMeasureOne] = useState('');
-  const [measureTwo, setMeasureTwo] = useState('');
+  const [temperatureOne, setTemperatureOne] = useState('celsius');
+  const [temperatureTwo, setTemperatureTwo] = useState('fahrenheit');
+  const [temperatureResult, setTemperatureResult] = useState(0);
 
   if (screen === 'home') {
     return getScreenMenu();
@@ -30,31 +32,31 @@ export default function App() {
     const setScreenArea = () => {
       setScreen('area');
     };
-  
+
     const setScreenDigitalStorage = () => {
       setScreen('digitalStorage');
     };
-  
+
     const setScreenFrequency = () => {
       setScreen('frequency');
     };
-  
+
     const setScreenLength = () => {
       setScreen('length');
     };
-  
+
     const setScreenMass = () => {
       setScreen('mass');
     };
-  
+
     const setScreenSpeed = () => {
       setScreen('speed');
     };
-  
+
     const setScreenTemperature = () => {
       setScreen('temperature');
     };
-  
+
     const setScreenTime = () => {
       setScreen('time');
     };
@@ -184,9 +186,39 @@ export default function App() {
       setScreen('home');
     };
 
+    const setResultTemperature = (value) => {
+
+      if (temperatureOne === 'celsius' && temperatureTwo === 'kelvin') {
+        setTemperatureResult(Number(value) + 273.15);
+      } else {
+        setTemperatureResult(Number(value) * 9 / 5 + 32);
+      }
+    }
+
     return (
       <View>
         <Text>Temperature</Text>
+        <Text>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={value => setResultTemperature(value)} />
+        <Picker
+          selectedValue={temperatureOne}
+          onValueChange={(itemValue) =>
+            setTemperatureOne(itemValue)
+          }>
+          <Picker.Item label="Celsius" value="celsius" />
+          <Picker.Item label="Fahrenheit" value="fahrenheit" />
+          <Picker.Item label="Kelvin" value="kelvin" />
+        </Picker>
+        <Picker
+          selectedValue={temperatureTwo}
+          onValueChange={(itemValue) =>
+            setTemperatureTwo(itemValue)
+          }>
+          <Picker.Item label="Fahrenheit" value="fahrenheit" />
+          <Picker.Item label="Celsius" value="celsius" />
+          <Picker.Item label="Kelvin" value="kelvin" />
+        </Picker>
+        <Text>{temperatureResult}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
