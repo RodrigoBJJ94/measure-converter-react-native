@@ -186,14 +186,22 @@ export default function App() {
       setScreen('home');
     };
 
-    const setResultTemperature = (value) => {
 
+    const setResultTemperature = (value) => {
       if (temperatureOne === 'celsius' && temperatureTwo === 'kelvin') {
-        setTemperatureResult(Number(value) + 273.15);
+        if (value !== '') {
+          setTemperatureResult(Number(value) + 273.15);
+        } else {
+          setTemperatureResult('');
+        }
       } else {
-        setTemperatureResult(Number(value) * 9 / 5 + 32);
+        if (value !== '') {
+          setTemperatureResult(Number(value) * 9 / 5 + 32);
+        } else {
+          setTemperatureResult('')
+        }
       }
-    }
+    };
 
     return (
       <View>
@@ -204,7 +212,8 @@ export default function App() {
           selectedValue={temperatureOne}
           onValueChange={(itemValue) =>
             setTemperatureOne(itemValue)
-          }>
+          }
+        >
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Kelvin" value="kelvin" />
@@ -213,12 +222,13 @@ export default function App() {
           selectedValue={temperatureTwo}
           onValueChange={(itemValue) =>
             setTemperatureTwo(itemValue)
-          }>
+          }
+        >
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Kelvin" value="kelvin" />
         </Picker>
-        <Text>{temperatureResult}</Text>
+        <Text>{temperatureResult !== '' ? temperatureResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
