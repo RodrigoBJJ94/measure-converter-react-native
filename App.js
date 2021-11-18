@@ -8,6 +8,10 @@ export default function App() {
   const [temperatureTwo, setTemperatureTwo] = useState('fahrenheit');
   const [temperatureInput, setTemperatureInput] = useState('');
   const [temperatureResult, setTemperatureResult] = useState(0);
+  const [frequencyOne, setFrequencyOne] = useState('hertz');
+  const [frequencyTwo, setFrequencyTwo] = useState('kilohertz');
+  const [frequencyInput, setFrequencyInput] = useState('');
+  const [frequencyResult, setFrequencyResult] = useState(0);
 
   if (screen === 'home') {
     return getScreenMenu();
@@ -125,11 +129,131 @@ export default function App() {
   function getScreenFrequency() {
     const setScreenHome = () => {
       setScreen('home');
+      setFrequencyResult(0);
+      setFrequencyOne('hertz');
+      setFrequencyTwo('kilohertz');
+    };
+
+    const resultFrequency = (value) => {
+      if (frequencyOne === 'hertz' && frequencyTwo === 'megahertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'hertz' && frequencyTwo === 'gigahertz') {
+        if (value !== '') {
+          setFrequencyResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'hertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) * 1000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'megahertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'gigahertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'megahertz' && frequencyTwo === 'hertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) * 1000000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'megahertz' && frequencyTwo === 'kilohertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) * 1000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'megahertz' && frequencyTwo === 'gigahertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'hertz') {
+        if (value !== '') {
+          setFrequencyResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'kilohertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'megahertz') {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000);
+        } else {
+          setFrequencyResult('');
+        }
+      } else if (frequencyOne === frequencyTwo) {
+        if (value !== '') {
+          setFrequencyResult(Number(value));
+        } else {
+          setFrequencyResult('');
+        }
+      } else {
+        if (value !== '') {
+          setFrequencyResult(Number(value) / 1000);
+        } else {
+          setFrequencyResult('')
+        }
+      }
+    };
+
+    const onChangeFrequency = (value) => {
+      resultFrequency(value)
+    }
+
+    const clearFrequency = () => {
+      setFrequencyResult('');
+      frequencyInput.clear();
     };
 
     return (
       <View>
         <Text>Frequency</Text>
+        <Text>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeFrequency} ref={input => setFrequencyInput(input)} />
+        <Picker
+          selectedValue={frequencyOne}
+          onValueChange={(itemValue) =>
+            setFrequencyOne(itemValue)
+          } >
+          <Picker.Item label="Hertz" value="hertz" />
+          <Picker.Item label="Kilohertz" value="kilohertz" />
+          <Picker.Item label="Megahertz" value="megahertz" />
+          <Picker.Item label="Gigahertz" value="gigahertz" />
+        </Picker>
+        <Picker
+          selectedValue={frequencyTwo}
+          onValueChange={(itemValue) =>
+            setFrequencyTwo(itemValue)
+          } >
+          <Picker.Item label="Hertz" value="hertz" />
+          <Picker.Item label="Kilohertz" value="kilohertz" />
+          <Picker.Item label="Megahertz" value="megahertz" />
+          <Picker.Item label="Gigahertz" value="gigahertz" />
+        </Picker>
+        <TouchableOpacity onPress={clearFrequency}>
+          <Text>Clear</Text>
+        </TouchableOpacity>
+        <Text>{frequencyResult !== 0 ? frequencyResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
@@ -221,9 +345,15 @@ export default function App() {
         } else {
           setTemperatureResult('');
         }
+      } else if (temperatureOne === temperatureTwo) {
+        if (value !== '') {
+          setTemperatureResult(Number(value));
+        } else {
+          setTemperatureResult('');
+        }
       } else {
         if (value !== '') {
-          setTemperatureResult(Number(value) * 9 / 5 + 32);
+          setTemperatureResult((Number(value) * 9 / 5 + 32).toFixed(1));
         } else {
           setTemperatureResult('')
         }
