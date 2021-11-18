@@ -6,6 +6,7 @@ export default function App() {
   const [screen, setScreen] = useState('home');
   const [temperatureOne, setTemperatureOne] = useState('celsius');
   const [temperatureTwo, setTemperatureTwo] = useState('fahrenheit');
+  const [temperatureInput, setTemperatureInput] = useState('');
   const [temperatureResult, setTemperatureResult] = useState(0);
 
   if (screen === 'home') {
@@ -184,13 +185,39 @@ export default function App() {
   function getScreenTemperature() {
     const setScreenHome = () => {
       setScreen('home');
+      setTemperatureResult(0);
+      setTemperatureOne('celsius');
+      setTemperatureTwo('fahrenheit');
     };
 
-
-    const setResultTemperature = (value) => {
+    const resultTemperature = (value) => {
       if (temperatureOne === 'celsius' && temperatureTwo === 'kelvin') {
         if (value !== '') {
-          setTemperatureResult(Number(value) + 273.15);
+          setTemperatureResult((Number(value) + 273.15).toFixed(1));
+        } else {
+          setTemperatureResult('');
+        }
+      } else if (temperatureOne === 'fahrenheit' && temperatureTwo === 'kelvin') {
+        if (value !== '') {
+          setTemperatureResult((Number(value - 32) * 5 / 9 + 273.15).toFixed(1));
+        } else {
+          setTemperatureResult('');
+        }
+      } else if (temperatureOne === 'fahrenheit' && temperatureTwo === 'celsius') {
+        if (value !== '') {
+          setTemperatureResult((Number(value - 32) * 5 / 9).toFixed(1));
+        } else {
+          setTemperatureResult('');
+        }
+      } else if (temperatureOne === 'kelvin' && temperatureTwo === 'celsius') {
+        if (value !== '') {
+          setTemperatureResult((Number(value) - 273.15).toFixed(1));
+        } else {
+          setTemperatureResult('');
+        }
+      } else if (temperatureOne === 'kelvin' && temperatureTwo === 'fahrenheit') {
+        if (value !== '') {
+          setTemperatureResult(Number((value - 273.15) * 9 / 5 + 32).toFixed(1));
         } else {
           setTemperatureResult('');
         }
@@ -203,17 +230,25 @@ export default function App() {
       }
     };
 
+    const onChangeTemperature = (value) => {
+      resultTemperature(value)
+    }
+
+    const clearTemperature = () => {
+      setTemperatureResult('');
+      temperatureInput.clear();
+    };
+
     return (
       <View>
         <Text>Temperature</Text>
         <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={value => setResultTemperature(value)} />
+        <TextInput keyboardType="numeric" onChangeText={onChangeTemperature} ref={input => setTemperatureInput(input)} />
         <Picker
           selectedValue={temperatureOne}
           onValueChange={(itemValue) =>
             setTemperatureOne(itemValue)
-          }
-        >
+          } >
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Kelvin" value="kelvin" />
@@ -222,13 +257,15 @@ export default function App() {
           selectedValue={temperatureTwo}
           onValueChange={(itemValue) =>
             setTemperatureTwo(itemValue)
-          }
-        >
+          } >
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Kelvin" value="kelvin" />
         </Picker>
-        <Text>{temperatureResult !== '' ? temperatureResult : ''}</Text>
+        <TouchableOpacity onPress={clearTemperature}>
+          <Text>Clear</Text>
+        </TouchableOpacity>
+        <Text>{temperatureResult !== 0 ? temperatureResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
