@@ -12,6 +12,10 @@ export default function App() {
   const [frequencyTwo, setFrequencyTwo] = useState('kilohertz');
   const [frequencyInput, setFrequencyInput] = useState('');
   const [frequencyResult, setFrequencyResult] = useState(0);
+  const [speedOne, setSpeedOne] = useState('meterPerSecond');
+  const [speedTwo, setSpeedTwo] = useState('kilometerPerHour');
+  const [speedInput, setSpeedInput] = useState('');
+  const [speedResult, setSpeedResult] = useState(0);
 
   if (screen === 'home') {
     return getScreenMenu();
@@ -212,13 +216,13 @@ export default function App() {
           setFrequencyResult(Number(value) / 1000);
         } else {
           setFrequencyResult('')
-        }
-      }
+        };
+      };
     };
 
     const onChangeFrequency = (value) => {
-      resultFrequency(value)
-    }
+      resultFrequency(value);
+    };
 
     const clearFrequency = () => {
       setFrequencyResult('');
@@ -230,21 +234,13 @@ export default function App() {
         <Text>Frequency</Text>
         <Text>Select a value</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeFrequency} ref={input => setFrequencyInput(input)} />
-        <Picker
-          selectedValue={frequencyOne}
-          onValueChange={(itemValue) =>
-            setFrequencyOne(itemValue)
-          } >
+        <Picker selectedValue={frequencyOne} onValueChange={(itemValue) => setFrequencyOne(itemValue)}>
           <Picker.Item label="Hertz" value="hertz" />
           <Picker.Item label="Kilohertz" value="kilohertz" />
           <Picker.Item label="Megahertz" value="megahertz" />
           <Picker.Item label="Gigahertz" value="gigahertz" />
         </Picker>
-        <Picker
-          selectedValue={frequencyTwo}
-          onValueChange={(itemValue) =>
-            setFrequencyTwo(itemValue)
-          } >
+        <Picker selectedValue={frequencyTwo} onValueChange={(itemValue) => setFrequencyTwo(itemValue)}>
           <Picker.Item label="Hertz" value="hertz" />
           <Picker.Item label="Kilohertz" value="kilohertz" />
           <Picker.Item label="Megahertz" value="megahertz" />
@@ -294,11 +290,173 @@ export default function App() {
   function getScreenSpeed() {
     const setScreenHome = () => {
       setScreen('home');
+      setSpeedResult(0);
+      setSpeedOne('meterPerSecond');
+      setSpeedTwo('kilometerPerHour');
+    };
+
+    const resultSpeed = (value) => {
+      if (speedOne === 'meterPerSecond' && speedTwo === 'milesPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 2.237).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'meterPerSecond' && speedTwo === 'footPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 3.281).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'meterPerSecond' && speedTwo === 'knot') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.944).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'milesPerHour' && speedTwo === 'footPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.467).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'milesPerHour' && speedTwo === 'meterPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 2.237).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'milesPerHour' && speedTwo === 'kilometerPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.609).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'milesPerHour' && speedTwo === 'knot') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.151).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'footPerSecond' && speedTwo === 'milesPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.467).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'footPerSecond' && speedTwo === 'meterPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 3.281).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'footPerSecond' && speedTwo === 'kilometerPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.097).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'footPerSecond' && speedTwo === 'knot') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.688).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'kilometerPerHour' && speedTwo === 'milesPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.609).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'kilometerPerHour' && speedTwo === 'footPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.097).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'kilometerPerHour' && speedTwo === 'meterPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 3.6).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'kilometerPerHour' && speedTwo === 'knot') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.852).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'knot' && speedTwo === 'milesPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.151).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'knot' && speedTwo === 'footPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.688).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'knot' && speedTwo === 'meterPerSecond') {
+        if (value !== '') {
+          setSpeedResult((Number(value) / 1.944).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === 'knot' && speedTwo === 'kilometerPerHour') {
+        if (value !== '') {
+          setSpeedResult((Number(value) * 1.852).toFixed(1));
+        } else {
+          setSpeedResult('');
+        }
+      } else if (speedOne === speedTwo) {
+        if (value !== '') {
+          setSpeedResult(Number(value));
+        } else {
+          setSpeedResult('');
+        }
+      } else {
+        if (value !== '') {
+          setSpeedResult(Number(value) * 3.6);
+        } else {
+          setSpeedResult('')
+        };
+      };
+    };
+
+    const onChangeSpeed = (value) => {
+      resultSpeed(value);
+    };
+
+    const clearSpeed = () => {
+      setSpeedResult('');
+      speedInput.clear();
     };
 
     return (
       <View>
         <Text>Speed</Text>
+        <Text>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeSpeed} ref={input => setSpeedInput(input)} />
+        <Picker selectedValue={speedOne} onValueChange={(itemValue) => setSpeedOne(itemValue)}>
+          <Picker.Item label="Meter per Second" value="meterPerSecond" />
+          <Picker.Item label="Miles per Hour" value="milesPerHour" />
+          <Picker.Item label="Foot per Second" value="footPerSecond" />
+          <Picker.Item label="Kilometer per Hour" value="kilometerPerHour" />
+          <Picker.Item label="Knot" value="knot" />
+        </Picker>
+        <Picker selectedValue={speedTwo} onValueChange={(itemValue) => setSpeedTwo(itemValue)}>
+          <Picker.Item label="Meter per Second" value="meterPerSecond" />
+          <Picker.Item label="Miles per Hour" value="milesPerHour" />
+          <Picker.Item label="Foot per Second" value="footPerSecond" />
+          <Picker.Item label="Kilometer per Hour" value="kilometerPerHour" />
+          <Picker.Item label="Knot" value="knot" />
+        </Picker>
+        <TouchableOpacity onPress={clearSpeed}>
+          <Text>Clear</Text>
+        </TouchableOpacity>
+        <Text>{speedResult !== 0 ? speedResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
@@ -356,12 +514,12 @@ export default function App() {
           setTemperatureResult((Number(value) * 9 / 5 + 32).toFixed(1));
         } else {
           setTemperatureResult('')
-        }
-      }
+        };
+      };
     };
 
     const onChangeTemperature = (value) => {
-      resultTemperature(value)
+      resultTemperature(value);
     }
 
     const clearTemperature = () => {
@@ -374,20 +532,12 @@ export default function App() {
         <Text>Temperature</Text>
         <Text>Select a value</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeTemperature} ref={input => setTemperatureInput(input)} />
-        <Picker
-          selectedValue={temperatureOne}
-          onValueChange={(itemValue) =>
-            setTemperatureOne(itemValue)
-          } >
+        <Picker selectedValue={temperatureOne} onValueChange={(itemValue) => setTemperatureOne(itemValue)}>
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Kelvin" value="kelvin" />
         </Picker>
-        <Picker
-          selectedValue={temperatureTwo}
-          onValueChange={(itemValue) =>
-            setTemperatureTwo(itemValue)
-          } >
+        <Picker selectedValue={temperatureTwo} onValueChange={(itemValue) => setTemperatureTwo(itemValue)}>
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Kelvin" value="kelvin" />
