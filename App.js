@@ -24,6 +24,10 @@ export default function App() {
   const [digitalStorageTwo, setDigitalStorageTwo] = useState('kilobyte');
   const [digitalStorageInput, setDigitalStorageInput] = useState('');
   const [digitalStorageResult, setDigitalStorageResult] = useState(0);
+  const [areaOne, setAreaOne] = useState('squareMeter');
+  const [areaTwo, setAreaTwo] = useState('squareKilometer');
+  const [areaInput, setAreaInput] = useState('');
+  const [areaResult, setAreaResult] = useState(0);
 
   if (screen === 'home') {
     return getScreenMenu();
@@ -111,11 +115,395 @@ export default function App() {
   function getScreenArea() {
     const setScreenHome = () => {
       setScreen('home');
+      setAreaResult(0);
+      setAreaOne('squareMeter');
+      setAreaTwo('squareKilometer');
+    };
+
+    const resultArea = (value) => {
+      if (areaOne === 'byte' && areaTwo === 'bit') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 8);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8).toFixed(1));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000000).toFixed(7));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000000000).toFixed(10));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000000000).toFixed(10));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'bit' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 8000000000000).toFixed(13));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'kilobyte' && areaTwo === 'bit') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 8000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'kilobyte' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'kilobyte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 100).toFixed(2));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'kilobyte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'kilobyte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'megabyte' && areaTwo === 'bit') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 8000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'megabyte' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'megabyte' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'megabyte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000).toFixed(3));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'megabyte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'gigabyte' && areaTwo === 'bit') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 8000000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'gigabyte' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'gigabyte' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'gigabyte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'gigabyte' && areaTwo === 'terabyte') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1000).toFixed(3));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'terabyte' && areaTwo === 'bit') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 8000000000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'terabyte' && areaTwo === 'byte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'terabyte' && areaTwo === 'kilobyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'terabyte' && areaTwo === 'megabyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'terabyte' && areaTwo === 'gigabyte') {
+        if (value !== '') {
+          setAreaResult(Number(value) * 1000);
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === areaTwo) {
+        if (value !== '') {
+          setAreaResult(Number(value));
+        } else {
+          setAreaResult('');
+        }
+      } else {
+        if (value !== '') {
+          setAreaResult(Number(value) / 1000);
+        } else {
+          setAreaResult('');
+        };
+      };
+    };
+
+    const onChangeArea = (value) => {
+      resultArea(value);
+    };
+
+    const clearArea = () => {
+      setAreaResult('');
+      areaInput.clear();
     };
 
     return (
       <View>
         <Text>Area</Text>
+        <Text>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} />
+        <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)}>
+          <Picker.Item label="Square Kilometer" value="squareKilometer" />
+          <Picker.Item label="Square Meter" value="squareMeter" />
+          <Picker.Item label="Square Mile" value="squareMile" />
+          <Picker.Item label="Square Yard" value="squareYard" />
+          <Picker.Item label="Square Foot" value="squareFoot" />
+          <Picker.Item label="Square Inch" value="squareInch" />
+          <Picker.Item label="Hectare" value="hectare" />
+          <Picker.Item label="Acre" value="acre" />
+        </Picker>
+        <Picker selectedValue={areaTwo} onValueChange={(itemValue) => setAreaTwo(itemValue)}>
+          <Picker.Item label="Square Kilometer" value="squareKilometer" />
+          <Picker.Item label="Square Meter" value="squareMeter" />
+          <Picker.Item label="Square Mile" value="squareMile" />
+          <Picker.Item label="Square Yard" value="squareYard" />
+          <Picker.Item label="Square Foot" value="squareFoot" />
+          <Picker.Item label="Square Inch" value="squareInch" />
+          <Picker.Item label="Hectare" value="hectare" />
+          <Picker.Item label="Acre" value="acre" />
+        </Picker>
+        <TouchableOpacity onPress={clearArea}>
+          <Text>Clear</Text>
+        </TouchableOpacity>
+        <Text>{areaResult !== 0 ? areaResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
