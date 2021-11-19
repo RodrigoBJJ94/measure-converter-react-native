@@ -20,6 +20,10 @@ export default function App() {
   const [timeTwo, setTimeTwo] = useState('minute');
   const [timeInput, setTimeInput] = useState('');
   const [timeResult, setTimeResult] = useState(0);
+  const [digitalStorageOne, setDigitalStorageOne] = useState('byte');
+  const [digitalStorageTwo, setDigitalStorageTwo] = useState('kilobyte');
+  const [digitalStorageInput, setDigitalStorageInput] = useState('');
+  const [digitalStorageResult, setDigitalStorageResult] = useState(0);
 
   if (screen === 'home') {
     return getScreenMenu();
@@ -122,11 +126,235 @@ export default function App() {
   function getScreenDigitalStorage() {
     const setScreenHome = () => {
       setScreen('home');
+      setDigitalStorageResult(0);
+      setDigitalStorageOne('byte');
+      setDigitalStorageTwo('kylobyte');
+    };
+
+    const resultDigitalStorage = (value) => {
+      if (digitalStorageOne === 'byte' && digitalStorageTwo === 'bit') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 8);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'byte' && digitalStorageTwo === 'megabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'byte' && digitalStorageTwo === 'gigabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'byte' && digitalStorageTwo === 'terabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'byte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 8).toFixed(1));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'kilobyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 8000).toFixed(4));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'megabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 8000000).toFixed(6));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'gigabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 8000000000).toFixed(9));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'terabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 8000000000000).toFixed(12));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'bit') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 8000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'byte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'megabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 100).toFixed(3));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'gigabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'terabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'bit') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 8000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'byte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'kilobyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'gigabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000).toFixed(3));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'terabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'bit') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 8000000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'byte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'kilobyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'megabyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'terabyte') {
+        if (value !== '') {
+          setDigitalStorageResult((Number(value) / 1000).toFixed(3));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'bit') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 8000000000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'byte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000000000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'kilobyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) / 1000000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'megabyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'gigabyte') {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) * 1000);
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else if (digitalStorageOne === digitalStorageTwo) {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value));
+        } else {
+          setDigitalStorageResult('');
+        }
+      } else {
+        if (value !== '') {
+          setDigitalStorageResult(Number(value) / 1000);
+        } else {
+          setDigitalStorageResult('')
+        };
+      };
+    };
+
+    const onChangeDigitalStorage = (value) => {
+      resultDigitalStorage(value);
+    };
+
+    const clearDigitalStorage = () => {
+      setDigitalStorageResult('');
+      digitalStorageInput.clear();
     };
 
     return (
       <View>
-        <Text>Digital Storage</Text>
+        <Text>DigitalStorage</Text>
+        <Text>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeDigitalStorage} ref={input => setDigitalStorageInput(input)} />
+        <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setdigitalStorageOne(itemValue)}>
+          <Picker.Item label="Bit" value="bit" />
+          <Picker.Item label="Byte" value="byte" />
+          <Picker.Item label="Kilobyte" value="kilobyte" />
+          <Picker.Item label="Megabyte" value="megabyte" />
+          <Picker.Item label="Gigabyte" value="gigabyte" />
+          <Picker.Item label="Terabyte" value="terabyte" />
+        </Picker>
+        <Picker selectedValue={digitalStorageTwo} onValueChange={(itemValue) => setdigitalStorageTwo(itemValue)}>
+          <Picker.Item label="Bit" value="bit" />
+          <Picker.Item label="Byte" value="byte" />
+          <Picker.Item label="Kilobyte" value="kilobyte" />
+          <Picker.Item label="Megabyte" value="megabyte" />
+          <Picker.Item label="Gigabyte" value="gigabyte" />
+          <Picker.Item label="Terabyte" value="terabyte" />
+        </Picker>
+        <TouchableOpacity onPress={clearDigitalStorage}>
+          <Text>Clear</Text>
+        </TouchableOpacity>
+        <Text>{digitalStorageResult !== 0 ? digitalStorageResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
