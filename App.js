@@ -170,19 +170,19 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'megabyte') {
         if (value !== '') {
-          setDigitalStorageResult((Number(value) / 8000000).toFixed(6));
+          setDigitalStorageResult((Number(value) / 8000000).toFixed(7));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'gigabyte') {
         if (value !== '') {
-          setDigitalStorageResult((Number(value) / 8000000000).toFixed(9));
+          setDigitalStorageResult((Number(value) / 8000000000).toFixed(10));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'bit' && digitalStorageTwo === 'terabyte') {
         if (value !== '') {
-          setDigitalStorageResult((Number(value) / 8000000000000).toFixed(12));
+          setDigitalStorageResult((Number(value) / 8000000000000).toFixed(13));
         } else {
           setDigitalStorageResult('');
         }
@@ -200,7 +200,7 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'megabyte') {
         if (value !== '') {
-          setDigitalStorageResult((Number(value) / 100).toFixed(3));
+          setDigitalStorageResult((Number(value) / 100).toFixed(2));
         } else {
           setDigitalStorageResult('');
         }
@@ -290,7 +290,7 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'kilobyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) / 1000000000);
+          setDigitalStorageResult(Number(value) * 1000000000);
         } else {
           setDigitalStorageResult('');
         }
@@ -316,7 +316,7 @@ export default function App() {
         if (value !== '') {
           setDigitalStorageResult(Number(value) / 1000);
         } else {
-          setDigitalStorageResult('')
+          setDigitalStorageResult('');
         };
       };
     };
@@ -335,7 +335,7 @@ export default function App() {
         <Text>DigitalStorage</Text>
         <Text>Select a value</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeDigitalStorage} ref={input => setDigitalStorageInput(input)} />
-        <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setdigitalStorageOne(itemValue)}>
+        <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setDigitalStorageOne(itemValue)}>
           <Picker.Item label="Bit" value="bit" />
           <Picker.Item label="Byte" value="byte" />
           <Picker.Item label="Kilobyte" value="kilobyte" />
@@ -343,7 +343,7 @@ export default function App() {
           <Picker.Item label="Gigabyte" value="gigabyte" />
           <Picker.Item label="Terabyte" value="terabyte" />
         </Picker>
-        <Picker selectedValue={digitalStorageTwo} onValueChange={(itemValue) => setdigitalStorageTwo(itemValue)}>
+        <Picker selectedValue={digitalStorageTwo} onValueChange={(itemValue) => setDigitalStorageTwo(itemValue)}>
           <Picker.Item label="Bit" value="bit" />
           <Picker.Item label="Byte" value="byte" />
           <Picker.Item label="Kilobyte" value="kilobyte" />
