@@ -896,99 +896,99 @@ export default function App() {
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'decade' && timeTwo === 'second') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 315400000);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'minute') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 5656000);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'hour') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 87600);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'day') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 3650);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'week') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 521);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'month') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 120);
+        } else {
+          setTimeResult('');
+        }
+      } else if (timeOne === 'decade' && timeTwo === 'year') {
+        if (value !== '') {
+          setTimeResult(Number(value) * 10);
         } else {
           setTimeResult('');
         }
       } else if (timeOne === 'decade' && timeTwo === 'century') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult((Number(value) / 10).toFixed(1));
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'second') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 3154000000);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'minute') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 52560000);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'hour') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 87600);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'day') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 36500);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'week') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 5214);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'decade' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'month') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 1200);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'year') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 100);
         } else {
           setTimeResult('');
         }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
+      } else if (timeOne === 'century' && timeTwo === 'decade') {
         if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
-        } else {
-          setTimeResult('');
-        }
-      } else if (timeOne === 'century' && timeTwo === 'century') {
-        if (value !== '') {
-          setTimeResult((Number(value) / 3154000000).toFixed(10));
+          setTimeResult(Number(value) * 10);
         } else {
           setTimeResult('');
         }
@@ -1000,7 +1000,7 @@ export default function App() {
         }
       } else {
         if (value !== '') {
-          setTimeResult(Number(value) * 3.6);
+          setTimeResult((Number(value) / 60).toFixed(2));
         } else {
           setTimeResult('')
         };
