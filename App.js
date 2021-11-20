@@ -234,7 +234,7 @@ export default function App() {
         }
       } else if (areaOne === 'squareMile' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) * 4014000000).toFixed(9));
+          setAreaResult((Number(value) * 4014000000).toFixed(1));
         } else {
           setAreaResult('');
         }
@@ -264,7 +264,7 @@ export default function App() {
         }
       } else if (areaOne === 'squareYard' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 3098000).toFixed(6));
+          setAreaResult((Number(value) / 3098000).toFixed(7));
         } else {
           setAreaResult('');
         }
@@ -306,7 +306,7 @@ export default function App() {
         }
       } else if (areaOne === 'squareFoot' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 27880000).toFixed(7));
+          setAreaResult((Number(value) / 27880000).toFixed(8));
         } else {
           setAreaResult('');
         }
@@ -348,7 +348,7 @@ export default function App() {
         }
       } else if (areaOne === 'squareInch' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 4014000000).toFixed(9));
+          setAreaResult((Number(value) / 4014000000).toFixed(10));
         } else {
           setAreaResult('');
         }
@@ -372,7 +372,7 @@ export default function App() {
         }
       } else if (areaOne === 'squareInch' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 6273000).toFixed(6));
+          setAreaResult((Number(value) / 6273000).toFixed(7));
         } else {
           setAreaResult('');
         }
@@ -384,7 +384,7 @@ export default function App() {
         }
       } else if (areaOne === 'hectare' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) * 10000).toFixed(2));
+          setAreaResult((Number(value) * 10000).toFixed(1));
         } else {
           setAreaResult('');
         }
@@ -462,7 +462,7 @@ export default function App() {
         }
       } else if (areaOne === areaTwo) {
         if (value !== '') {
-          setAreaResult((Number(value)).toFixed(1));
+          setAreaResult(Number(value));
         } else {
           setAreaResult('');
         }
@@ -597,7 +597,7 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'megabyte') {
         if (value !== '') {
-          setDigitalStorageResult((Number(value) / 100).toFixed(2));
+          setDigitalStorageResult((Number(value) / 1000).toFixed(3));
         } else {
           setDigitalStorageResult('');
         }
@@ -705,7 +705,7 @@ export default function App() {
         }
       } else if (digitalStorageOne === digitalStorageTwo) {
         if (value !== '') {
-          setDigitalStorageResult((Number(value)).toFixed(1));
+          setDigitalStorageResult(Number(value));
         } else {
           setDigitalStorageResult('');
         }
@@ -836,7 +836,7 @@ export default function App() {
         }
       } else if (frequencyOne === frequencyTwo) {
         if (value !== '') {
-          setFrequencyResult((Number(value)).toFixed(1));
+          setFrequencyResult(Number(value));
         } else {
           setFrequencyResult('');
         }
@@ -1053,7 +1053,7 @@ export default function App() {
         }
       } else if (lengthOne === 'millimeter' && lengthTwo === 'nanometer') {
         if (value !== '') {
-          setLengthResult((Number(value) * 1000000).toFixed(6));
+          setLengthResult((Number(value) * 1000000).toFixed(1));
         } else {
           setLengthResult('');
         }
@@ -1113,19 +1113,19 @@ export default function App() {
         }
       } else if (lengthOne === 'nanometer' && lengthTwo === 'yard') {
         if (value !== '') {
-          setLengthResult((Number(value) / 914400000).toFixed(8));
+          setLengthResult((Number(value) / 914400000).toFixed(9));
         } else {
           setLengthResult('');
         }
       } else if (lengthOne === 'nanometer' && lengthTwo === 'foot') {
         if (value !== '') {
-          setLengthResult((Number(value) * 304800000).toFixed(8));
+          setLengthResult((Number(value) * 304800000).toFixed(1));
         } else {
           setLengthResult('');
         }
       } else if (lengthOne === 'nanometer' && lengthTwo === 'inch') {
         if (value !== '') {
-          setLengthResult((Number(value) / 25400000).toFixed(7));
+          setLengthResult((Number(value) / 25400000).toFixed(8));
         } else {
           setLengthResult('');
         }
@@ -1323,7 +1323,7 @@ export default function App() {
         }
       } else if (lengthOne === lengthTwo) {
         if (value !== '') {
-          setLengthResult((Number(value)).toFixed(1));
+          setLengthResult(Number(value));
         } else {
           setLengthResult('');
         }
@@ -1490,7 +1490,7 @@ export default function App() {
         }
       } else if (massOne === 'gram' && massTwo === 'once') {
         if (value !== '') {
-          setMassResult((Number(value) / 28.35).toFixed(1));
+          setMassResult((Number(value) / 28.35).toFixed(2));
         } else {
           setMassResult('');
         }
@@ -1520,7 +1520,7 @@ export default function App() {
         }
       } else if (massOne === 'milligram' && massTwo === 'pound') {
         if (value !== '') {
-          setMassResult((Number(value) / 453592).toFixed(5));
+          setMassResult((Number(value) / 453592).toFixed(6));
         } else {
           setMassResult('');
         }
@@ -1556,13 +1556,13 @@ export default function App() {
         }
       } else if (massOne === 'microgram' && massTwo === 'pound') {
         if (value !== '') {
-          setMassResult((Number(value) / 453600000).toFixed(8));
+          setMassResult((Number(value) / 453600000).toFixed(9));
         } else {
           setMassResult('');
         }
       } else if (massOne === 'microgram' && massTwo === 'once') {
         if (value !== '') {
-          setMassResult((Number(value) / 28350000).toFixed(7));
+          setMassResult((Number(value) / 28350000).toFixed(8));
         } else {
           setMassResult('');
         }
@@ -1598,7 +1598,7 @@ export default function App() {
         }
       } else if (massOne === 'pound' && massTwo === 'once') {
         if (value !== '') {
-          setMassResult((Number(value) * 16).toFixed(3));
+          setMassResult((Number(value) * 16).toFixed(1));
         } else {
           setMassResult('');
         }
@@ -1640,7 +1640,7 @@ export default function App() {
         }
       } else if (massOne === massTwo) {
         if (value !== '') {
-          setMassResult((Number(value)).toFixed(1));
+          setMassResult(Number(value));
         } else {
           setMassResult('');
         }
@@ -1821,7 +1821,7 @@ export default function App() {
         }
       } else if (speedOne === speedTwo) {
         if (value !== '') {
-          setSpeedResult((Number(value)).toFixed(1));
+          setSpeedResult(Number(value));
         } else {
           setSpeedResult('');
         }
@@ -1914,7 +1914,7 @@ export default function App() {
         }
       } else if (temperatureOne === temperatureTwo) {
         if (value !== '') {
-          setTemperatureResult((Number(value)).toFixed(1));
+          setTemperatureResult(Number(value));
         } else {
           setTemperatureResult('');
         }
@@ -2129,7 +2129,7 @@ export default function App() {
         }
       } else if (timeOne === 'day' && timeTwo === 'week') {
         if (value !== '') {
-          setTimeResult((Number(value) / 7).toFixed(2));
+          setTimeResult((Number(value) / 7).toFixed(1));
         } else {
           setTimeResult('');
         }
@@ -2183,13 +2183,13 @@ export default function App() {
         }
       } else if (timeOne === 'week' && timeTwo === 'month') {
         if (value !== '') {
-          setTimeResult((Number(value) / 4.345).toFixed(2));
+          setTimeResult((Number(value) / 4.345).toFixed(1));
         } else {
           setTimeResult('');
         }
       } else if (timeOne === 'week' && timeTwo === 'year') {
         if (value !== '') {
-          setTimeResult((Number(value) / 52.143).toFixed(3));
+          setTimeResult((Number(value) / 52.143).toFixed(2));
         } else {
           setTimeResult('');
         }
@@ -2399,7 +2399,7 @@ export default function App() {
         }
       } else if (timeOne === timeTwo) {
         if (value !== '') {
-          setTimeResult((Number(value)).toFixed(1));
+          setTimeResult(Number(value));
         } else {
           setTimeResult('');
         }
