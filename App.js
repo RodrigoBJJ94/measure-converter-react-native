@@ -81,6 +81,7 @@ export default function App() {
     const setScreenTime = () => {
       setScreen('time');
     };
+
     return (
       <View>
         <Text>Menu</Text>
@@ -121,345 +122,345 @@ export default function App() {
     };
 
     const resultArea = (value) => {
-      if (areaOne === 'byte' && areaTwo === 'bit') {
+      if (areaOne === 'squareMeter' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult(Number(value) * 8);
+          setAreaResult((Number(value) / 2590000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareMeter' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) * 1.196).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareMeter' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) * 10.764).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareMeter' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) * 1550).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareMeter' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) / 10000).toFixed(4));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareMeter' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) / 4047).toFixed(4));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) * 1000000 ).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) / 2.59 ).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) * 1196000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) * 10760000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) * 1550000000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) * 100).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareKilometer' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) * 247).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'squareKilometer') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) * 2.59).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) * 2590000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) * 3098000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) * 27880000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) * 4014000000).toFixed(9));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) * 259).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareMile' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) * 640).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'squareKilometer') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) / 1196000).toFixed(6));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) / 1.196).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) / 3098000).toFixed(6));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) * 9).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) * 1296).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) / 11960).toFixed(4));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareYard' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) / 4840).toFixed(4));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'squareKilometer') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) / 10760000).toFixed(7));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'byte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000000).toFixed(12));
+          setAreaResult((Number(value) / 10.764).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8).toFixed(1));
+          setAreaResult((Number(value) / 27880000).toFixed(7));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000).toFixed(4));
+          setAreaResult((Number(value) / 9).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000000).toFixed(7));
+          setAreaResult((Number(value) * 144).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000000000).toFixed(10));
+          setAreaResult((Number(value) / 107639).toFixed(6));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'squareFoot' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000000000).toFixed(10));
+          setAreaResult((Number(value) / 43560).toFixed(5));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'bit' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'squareInch' && areaTwo === 'squareKilometer') {
         if (value !== '') {
-          setAreaResult((Number(value) / 8000000000000).toFixed(13));
+          setAreaResult((Number(value) / 1550000000).toFixed(9));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'kilobyte' && areaTwo === 'bit') {
+      } else if (areaOne === 'squareInch' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult(Number(value) * 8000);
+          setAreaResult((Number(value) / 1550).toFixed(4));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'kilobyte' && areaTwo === 'byte') {
+      } else if (areaOne === 'squareInch' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000);
+          setAreaResult((Number(value) / 4014000000).toFixed(9));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'kilobyte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'squareInch' && areaTwo === 'squareYard') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 1296).toFixed(4));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'squareInch' && areaTwo === 'squareFoot') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 144).toFixed(3));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'squareInch' && areaTwo === 'hectare') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 15500000).toFixed(7));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'squareInch' && areaTwo === 'acre') {
+        if (value !== '') {
+          setAreaResult((Number(value) / 6273000).toFixed(6));
+        } else {
+          setAreaResult('');
+        }
+      } else if (areaOne === 'hectare' && areaTwo === 'squareKilometer') {
         if (value !== '') {
           setAreaResult((Number(value) / 100).toFixed(2));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'kilobyte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'hectare' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) * 10000).toFixed(2));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'kilobyte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'hectare' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000000).toFixed(9));
+          setAreaResult((Number(value) / 259).toFixed(3));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'megabyte' && areaTwo === 'bit') {
+      } else if (areaOne === 'hectare' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult(Number(value) * 8000000);
+          setAreaResult((Number(value) * 11960).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'megabyte' && areaTwo === 'byte') {
+      } else if (areaOne === 'hectare' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000000);
+          setAreaResult((Number(value) * 107639).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'megabyte' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'hectare' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000);
+          setAreaResult((Number(value) * 15500000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'megabyte' && areaTwo === 'gigabyte') {
+      } else if (areaOne === 'hectare' && areaTwo === 'acre') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000).toFixed(3));
+          setAreaResult((Number(value) * 2.471).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'megabyte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareKilometer') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
+          setAreaResult((Number(value) / 247).toFixed(3));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'gigabyte' && areaTwo === 'bit') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareMeter') {
         if (value !== '') {
-          setAreaResult(Number(value) * 8000000000);
+          setAreaResult((Number(value) * 4047).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'gigabyte' && areaTwo === 'byte') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareMile') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000000000);
+          setAreaResult((Number(value) / 640).toFixed(3));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'gigabyte' && areaTwo === 'kilobyte') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareYard') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000000);
+          setAreaResult((Number(value) * 4840).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'gigabyte' && areaTwo === 'megabyte') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareFoot') {
         if (value !== '') {
-          setAreaResult(Number(value) * 1000);
+          setAreaResult((Number(value) * 43560).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'gigabyte' && areaTwo === 'terabyte') {
+      } else if (areaOne === 'acre' && areaTwo === 'squareInch') {
         if (value !== '') {
-          setAreaResult((Number(value) / 1000).toFixed(3));
+          setAreaResult((Number(value) * 6273000).toFixed(1));
         } else {
           setAreaResult('');
         }
-      } else if (areaOne === 'terabyte' && areaTwo === 'bit') {
+      } else if (areaOne === 'acre' && areaTwo === 'hectare') {
         if (value !== '') {
-          setAreaResult(Number(value) * 8000000000000);
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'terabyte' && areaTwo === 'byte') {
-        if (value !== '') {
-          setAreaResult(Number(value) * 1000000000000);
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'terabyte' && areaTwo === 'kilobyte') {
-        if (value !== '') {
-          setAreaResult(Number(value) * 1000000000);
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'terabyte' && areaTwo === 'megabyte') {
-        if (value !== '') {
-          setAreaResult(Number(value) * 1000000);
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'terabyte' && areaTwo === 'gigabyte') {
-        if (value !== '') {
-          setAreaResult(Number(value) * 1000);
+          setAreaResult((Number(value) / 2.471).toFixed(1));
         } else {
           setAreaResult('');
         }
       } else if (areaOne === areaTwo) {
         if (value !== '') {
-          setAreaResult(Number(value));
+          setAreaResult((Number(value)).toFixed(1));
         } else {
           setAreaResult('');
         }
       } else {
         if (value !== '') {
-          setAreaResult(Number(value) / 1000);
+          setAreaResult((Number(value) / 1000000).toFixed(6));
         } else {
           setAreaResult('');
         };
@@ -522,7 +523,7 @@ export default function App() {
     const resultDigitalStorage = (value) => {
       if (digitalStorageOne === 'byte' && digitalStorageTwo === 'bit') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 8);
+          setDigitalStorageResult((Number(value) * 8).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
@@ -576,13 +577,13 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'bit') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 8000);
+          setDigitalStorageResult((Number(value) * 8000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'kilobyte' && digitalStorageTwo === 'byte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000);
+          setDigitalStorageResult((Number(value) * 1000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
@@ -606,19 +607,19 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'bit') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 8000000);
+          setDigitalStorageResult((Number(value) * 8000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'byte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000);
+          setDigitalStorageResult((Number(value) * 1000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'megabyte' && digitalStorageTwo === 'kilobyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000);
+          setDigitalStorageResult((Number(value) * 1000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
@@ -636,25 +637,25 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'bit') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 8000000000);
+          setDigitalStorageResult((Number(value) * 8000000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'byte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000000);
+          setDigitalStorageResult((Number(value) * 1000000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'kilobyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000);
+          setDigitalStorageResult((Number(value) * 1000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'gigabyte' && digitalStorageTwo === 'megabyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000);
+          setDigitalStorageResult((Number(value) * 1000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
@@ -666,43 +667,43 @@ export default function App() {
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'bit') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 8000000000000);
+          setDigitalStorageResult((Number(value) * 8000000000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'byte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000000000);
+          setDigitalStorageResult((Number(value) * 1000000000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'kilobyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000000);
+          setDigitalStorageResult((Number(value) * 1000000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'megabyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000000);
+          setDigitalStorageResult((Number(value) * 1000000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === 'terabyte' && digitalStorageTwo === 'gigabyte') {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) * 1000);
+          setDigitalStorageResult((Number(value) * 1000).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else if (digitalStorageOne === digitalStorageTwo) {
         if (value !== '') {
-          setDigitalStorageResult(Number(value));
+          setDigitalStorageResult((Number(value)).toFixed(1));
         } else {
           setDigitalStorageResult('');
         }
       } else {
         if (value !== '') {
-          setDigitalStorageResult(Number(value) / 1000);
+          setDigitalStorageResult((Number(value) / 1000).toFixed(3));
         } else {
           setDigitalStorageResult('');
         };
@@ -761,7 +762,7 @@ export default function App() {
     const resultFrequency = (value) => {
       if (frequencyOne === 'hertz' && frequencyTwo === 'megahertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000000);
+          setFrequencyResult((Number(value) / 1000000).toFixed(6));
         } else {
           setFrequencyResult('');
         }
@@ -773,67 +774,67 @@ export default function App() {
         }
       } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'hertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) * 1000);
+          setFrequencyResult((Number(value) * 1000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'megahertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000);
+          setFrequencyResult((Number(value) / 1000).toFixed(3));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'kilohertz' && frequencyTwo === 'gigahertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000000);
+          setFrequencyResult((Number(value) / 1000000).toFixed(6));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'megahertz' && frequencyTwo === 'hertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) * 1000000);
+          setFrequencyResult((Number(value) * 1000000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'megahertz' && frequencyTwo === 'kilohertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) * 1000);
+          setFrequencyResult((Number(value) * 1000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'megahertz' && frequencyTwo === 'gigahertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000);
+          setFrequencyResult((Number(value) / 1000).toFixed(3));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'hertz') {
         if (value !== '') {
-          setFrequencyResult((Number(value) / 1000000000).toFixed(9));
+          setFrequencyResult((Number(value) * 1000000000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'kilohertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000000);
+          setFrequencyResult((Number(value) * 1000000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === 'gigahertz' && frequencyTwo === 'megahertz') {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000);
+          setFrequencyResult((Number(value) * 1000).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else if (frequencyOne === frequencyTwo) {
         if (value !== '') {
-          setFrequencyResult(Number(value));
+          setFrequencyResult((Number(value)).toFixed(1));
         } else {
           setFrequencyResult('');
         }
       } else {
         if (value !== '') {
-          setFrequencyResult(Number(value) / 1000);
+          setFrequencyResult((Number(value) / 1000).toFixed(3));
         } else {
           setFrequencyResult('')
         };
