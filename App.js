@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 export default function App() {
@@ -91,31 +91,32 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Menu</Text>
-        <TouchableOpacity onPress={setScreenArea}>
-          <Text>Area</Text>
+      <View style={Styles.homeContainer}>
+        <StatusBar backgroundColor="#000" />
+        <Text style={Styles.homeTitle}>Home</Text>
+        <TouchableOpacity onPress={setScreenArea} style={Styles.homeButtonArea}>
+          <Text style={Styles.homeButtonsText}>Area</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenDigitalStorage}>
-          <Text>Digital Storage</Text>
+        <TouchableOpacity onPress={setScreenDigitalStorage} style={Styles.homeButtonDigitalStorage}>
+          <Text style={Styles.homeButtonsText}>Digital Storage</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenFrequency}>
-          <Text>Frequency</Text>
+        <TouchableOpacity onPress={setScreenFrequency} style={Styles.homeButtonFrequency}>
+          <Text style={Styles.homeButtonsText}>Frequency</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenLength}>
-          <Text>Length</Text>
+        <TouchableOpacity onPress={setScreenLength} style={Styles.homeButtonLenght}>
+          <Text style={Styles.homeButtonsText}>Length</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenMass}>
-          <Text>Mass</Text>
+        <TouchableOpacity onPress={setScreenMass} style={Styles.homeButtonMass}>
+          <Text style={Styles.homeButtonsText}>Mass</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenSpeed}>
-          <Text>Speed</Text>
+        <TouchableOpacity onPress={setScreenSpeed} style={Styles.homeButtonSpeed}>
+          <Text style={Styles.homeButtonsText}>Speed</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenTemperature}>
-          <Text>Temperature</Text>
+        <TouchableOpacity onPress={setScreenTemperature} style={Styles.homeButtonTemperature}>
+          <Text style={Styles.homeButtonsText}>Temperature</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenTime}>
-          <Text>Time</Text>
+        <TouchableOpacity onPress={setScreenTime} style={Styles.homeButtonTime}>
+          <Text style={Styles.homeButtonsText}>Time</Text>
         </TouchableOpacity>
       </View>
     );
@@ -485,10 +486,11 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Area</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} />
+      <View style={Styles.areaContainer}>
+        <StatusBar backgroundColor="#0086d0" />
+        <Text style={Styles.areaTitle}>Area</Text>
+        <Text style={Styles.areaCaption}>Select the first measurement</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} style={Styles.areaTextInput} />
         <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)}>
           <Picker.Item label="Square Kilometer" value="squareKilometer" />
           <Picker.Item label="Square Meter" value="squareMeter" />
@@ -509,12 +511,12 @@ export default function App() {
           <Picker.Item label="Hectare" value="hectare" />
           <Picker.Item label="Acre" value="acre" />
         </Picker>
-        <TouchableOpacity onPress={clearArea}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearArea} style={Styles.areaButtonClear}>
+          <Text style={Styles.areaButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{areaResult !== 0 ? areaResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.areaResult}>{`The result is: ${areaResult !== 0 ? areaResult : ''}`}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -1939,7 +1941,7 @@ export default function App() {
     return (
       <View>
         <Text>Temperature</Text>
-        <Text>Select a value</Text>
+        <Text>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeTemperature} ref={input => setTemperatureInput(input)} />
         <Picker selectedValue={temperatureOne} onValueChange={(itemValue) => setTemperatureOne(itemValue)}>
           <Picker.Item label="Celsius" value="celsius" />
@@ -1954,7 +1956,7 @@ export default function App() {
         <TouchableOpacity onPress={clearTemperature}>
           <Text>Clear</Text>
         </TouchableOpacity>
-        <Text>{temperatureResult !== 0 ? temperatureResult : ''}</Text>
+        <Text>{`The result is: ${temperatureResult !== 0 ? temperatureResult : ''}`}</Text>
         <TouchableOpacity onPress={setScreenHome}>
           <Text>Go Back to Home</Text>
         </TouchableOpacity>
@@ -2459,3 +2461,153 @@ export default function App() {
     );
   };
 };
+
+const Styles = StyleSheet.create({
+  homeContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#000'
+  },
+  homeTitle: {
+    fontSize: 60,
+    fontWeight: '900',
+    color: '#fff',
+    marginBottom: 70,
+    marginTop: -20,
+  },
+  homeButtonArea: {
+    backgroundColor: '#0086d0',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonDigitalStorage: {
+    backgroundColor: '#006db5',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonFrequency: {
+    backgroundColor: '#00559a',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonLenght: {
+    backgroundColor: '#003e7f',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonMass: {
+    backgroundColor: '#002966',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonSpeed: {
+    backgroundColor: '#00154d',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonTemperature: {
+    backgroundColor: '#000536',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 2,
+  },
+  homeButtonTime: {
+    backgroundColor: '#000128',
+    width: Dimensions.get('screen').width / 1.5,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+  },
+  homeButtonsText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#fff'
+  },
+  backToHomeButton: {
+    width: Dimensions.get('screen').width / 1.8,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
+    borderRadius: 4,
+  },
+  backToHomeButtonText: {
+    color: '#0086d0',
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+  areaContainer: {
+    flex: 1,
+    backgroundColor: '#0086d0'
+  },
+  areaTitle: {
+    fontSize: 60,
+    fontWeight: '900',
+    color: '#000',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  areaCaption: {
+    fontSize: 20,
+    color: '#000',
+    paddingLeft: 15,
+  },
+  areaTextInput: {
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+  },
+  areaButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    borderRadius: 4,
+    marginTop: 40,
+  },
+  areaButtonClearText: {
+    color: '#0086d0',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  areaResult: {
+    color: '#000',
+    fontSize: 20,
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 40,
+  },
+});
