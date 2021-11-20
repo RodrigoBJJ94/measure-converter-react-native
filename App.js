@@ -890,338 +890,434 @@ export default function App() {
     const setScreenHome = () => {
       setScreen('home');
       setLengthResult(0);
-      setLengthOne('squareMeter');
-      setLengthTwo('squareKilometer');
+      setLengthOne('meter');
+      setLengthTwo('centimeter');
     };
 
     const resultLength = (value) => {
-      if (lengthOne === 'squareMeter' && lengthTwo === 'squareMile') {
+      if (lengthOne === 'meter' && lengthTwo === 'kilometer') {
         if (value !== '') {
-          setLengthResult((Number(value) / 2590000).toFixed(1));
+          setLengthResult((Number(value) / 1000).toFixed(3));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMeter' && lengthTwo === 'squareYard') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'millimeter') {
         if (value !== '') {
-          setLengthResult((Number(value) * 1.196).toFixed(1));
+          setLengthResult((Number(value) * 1000).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMeter' && lengthTwo === 'squareFoot') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'nanometer') {
         if (value !== '') {
-          setLengthResult((Number(value) * 10.764).toFixed(1));
+          setLengthResult((Number(value) * 1000000000).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMeter' && lengthTwo === 'squareInch') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'mile') {
         if (value !== '') {
-          setLengthResult((Number(value) * 1550).toFixed(1));
+          setLengthResult((Number(value) / 1609).toFixed(4));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMeter' && lengthTwo === 'hectare') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'yard') {
         if (value !== '') {
-          setLengthResult((Number(value) / 10000).toFixed(4));
+          setLengthResult((Number(value) * 1.094).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMeter' && lengthTwo === 'acre') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'foot') {
         if (value !== '') {
-          setLengthResult((Number(value) / 4047).toFixed(4));
+          setLengthResult((Number(value) * 3.281).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'squareMeter') {
+      } else if (lengthOne === 'meter' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 39.37).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 100000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'millimeter') {
         if (value !== '') {
           setLengthResult((Number(value) * 1000000).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'squareMile') {
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'nanometer') {
         if (value !== '') {
-          setLengthResult((Number(value) / 2.59).toFixed(1));
+          setLengthResult((Number(value) * 1000000000000).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'squareYard') {
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'mile') {
         if (value !== '') {
-          setLengthResult((Number(value) * 1196000).toFixed(1));
+          setLengthResult((Number(value) / 1.609).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'squareFoot') {
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'yard') {
         if (value !== '') {
-          setLengthResult((Number(value) * 10760000).toFixed(1));
+          setLengthResult((Number(value) * 1094).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'squareInch') {
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'foot') {
         if (value !== '') {
-          setLengthResult((Number(value) * 1550000000).toFixed(1));
+          setLengthResult((Number(value) * 3281).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'hectare') {
+      } else if (lengthOne === 'kilometer' && lengthTwo === 'inch') {
         if (value !== '') {
-          setLengthResult((Number(value) * 100).toFixed(1));
+          setLengthResult((Number(value) * 39370).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareKilometer' && lengthTwo === 'acre') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'kilometer') {
         if (value !== '') {
-          setLengthResult((Number(value) * 247).toFixed(1));
+          setLengthResult((Number(value) / 100000).toFixed(5));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'squareKilometer') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 2.59).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'squareMeter') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 2590000).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'squareYard') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 3098000).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'squareFoot') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 27880000).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'squareInch') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 4014000000).toFixed(9));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'hectare') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 259).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareMile' && lengthTwo === 'acre') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 640).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'squareKilometer') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 1196000).toFixed(6));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'squareMeter') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 1.196).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'squareMile') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 3098000).toFixed(6));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'squareFoot') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 9).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'squareInch') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 1296).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'hectare') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 11960).toFixed(4));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareYard' && lengthTwo === 'acre') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 4840).toFixed(4));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'squareKilometer') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 10760000).toFixed(7));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'squareMeter') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 10.764).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'squareMile') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 27880000).toFixed(7));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'squareYard') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 9).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'squareInch') {
-        if (value !== '') {
-          setLengthResult((Number(value) * 144).toFixed(1));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'hectare') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 107639).toFixed(6));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareFoot' && lengthTwo === 'acre') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 43560).toFixed(5));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'squareKilometer') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 1550000000).toFixed(9));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'squareMeter') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 1550).toFixed(4));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'squareMile') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 4014000000).toFixed(9));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'squareYard') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 1296).toFixed(4));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'squareFoot') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 144).toFixed(3));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'hectare') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 15500000).toFixed(7));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'squareInch' && lengthTwo === 'acre') {
-        if (value !== '') {
-          setLengthResult((Number(value) / 6273000).toFixed(6));
-        } else {
-          setLengthResult('');
-        }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareKilometer') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'meter') {
         if (value !== '') {
           setLengthResult((Number(value) / 100).toFixed(2));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareMeter') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'millimeter') {
         if (value !== '') {
-          setLengthResult((Number(value) * 10000).toFixed(2));
+          setLengthResult((Number(value) * 10).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareMile') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'nanometer') {
         if (value !== '') {
-          setLengthResult((Number(value) / 259).toFixed(3));
+          setLengthResult((Number(value) * 10000000).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareYard') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'mile') {
         if (value !== '') {
-          setLengthResult((Number(value) * 11960).toFixed(1));
+          setLengthResult((Number(value) / 160934).toFixed(5));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareFoot') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'yard') {
         if (value !== '') {
-          setLengthResult((Number(value) * 107639).toFixed(1));
+          setLengthResult((Number(value) / 91.44).toFixed(2));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'squareInch') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'foot') {
         if (value !== '') {
-          setLengthResult((Number(value) * 15500000).toFixed(1));
+          setLengthResult((Number(value) / 30.48).toFixed(2));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'hectare' && lengthTwo === 'acre') {
+      } else if (lengthOne === 'centimeter' && lengthTwo === 'inch') {
         if (value !== '') {
-          setLengthResult((Number(value) * 2.471).toFixed(1));
+          setLengthResult((Number(value) / 2.54).toFixed(6));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareKilometer') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'kilometer') {
         if (value !== '') {
-          setLengthResult((Number(value) / 247).toFixed(3));
+          setLengthResult((Number(value) / 1000000).toFixed(6));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareMeter') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'meter') {
         if (value !== '') {
-          setLengthResult((Number(value) * 4047).toFixed(1));
+          setLengthResult((Number(value) / 1000).toFixed(3));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareMile') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'centimeter') {
         if (value !== '') {
-          setLengthResult((Number(value) / 640).toFixed(3));
+          setLengthResult((Number(value) / 10).toFixed(1));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareYard') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'nanometer') {
         if (value !== '') {
-          setLengthResult((Number(value) * 4840).toFixed(1));
+          setLengthResult((Number(value) * 1000000).toFixed(6));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareFoot') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'mile') {
         if (value !== '') {
-          setLengthResult((Number(value) * 43560).toFixed(1));
+          setLengthResult((Number(value) / 1609000).toFixed(6));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'squareInch') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'yard') {
         if (value !== '') {
-          setLengthResult((Number(value) * 6273000).toFixed(1));
+          setLengthResult((Number(value) / 914).toFixed(3));
         } else {
           setLengthResult('');
         }
-      } else if (lengthOne === 'acre' && lengthTwo === 'hectare') {
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'foot') {
         if (value !== '') {
-          setLengthResult((Number(value) / 2.471).toFixed(1));
+          setLengthResult((Number(value) / 305).toFixed(3));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'millimeter' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 25.4).toFixed(2));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'kilometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1000000000000).toFixed(12));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1000000000).toFixed(9));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 10000000).toFixed(7));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'millimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1000000).toFixed(6));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'mile') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1609000000000).toFixed(12));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'yard') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 914400000).toFixed(8));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'foot') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 304800000).toFixed(8));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'nanometer' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 25400000).toFixed(7));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'kilometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1.609).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1609).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 160934).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'millimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1609000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'nanometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1609000000000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'yard') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 1760).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'foot') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 5280).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'mile' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 63360).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'kilometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1094).toFixed(4));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1.094).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 91.44).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'millimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 914).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'nanometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 914400000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'mile') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 1760).toFixed(4));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'foot') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 3).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'yard' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 36).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'kilometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 3281).toFixed(4));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 3.281).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 30.48).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'millimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 305).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'nanometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 304800000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'mile') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 5280).toFixed(4));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'yard') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 3).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'foot' && lengthTwo === 'inch') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 12).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'kilometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 39370).toFixed(5));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'meter') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 39.37).toFixed(2));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'centimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 2.54).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'millimeter') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 25.4).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'nanometer') {
+        if (value !== '') {
+          setLengthResult((Number(value) * 25400000).toFixed(1));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'mile') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 63360).toFixed(5));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'yard') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 36).toFixed(2));
+        } else {
+          setLengthResult('');
+        }
+      } else if (lengthOne === 'inch' && lengthTwo === 'foot') {
+        if (value !== '') {
+          setLengthResult((Number(value) / 12).toFixed(2));
         } else {
           setLengthResult('');
         }
@@ -1233,7 +1329,7 @@ export default function App() {
         }
       } else {
         if (value !== '') {
-          setLengthResult((Number(value) / 1000000).toFixed(6));
+          setLengthResult((Number(value) * 100).toFixed(1));
         } else {
           setLengthResult('');
         };
@@ -1255,24 +1351,26 @@ export default function App() {
         <Text>Select a value</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeLength} ref={input => setLengthInput(input)} />
         <Picker selectedValue={lengthOne} onValueChange={(itemValue) => setLengthOne(itemValue)}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
+          <Picker.Item label="Kilometer" value="kilometer" />
+          <Picker.Item label="Meter" value="meter" />
+          <Picker.Item label="Centimeter" value="centimeter" />
+          <Picker.Item label="Millimeter" value="millimeter" />
+          <Picker.Item label="Nanometer" value="nanometer" />
+          <Picker.Item label="Mile" value="mile" />
+          <Picker.Item label="Yard" value="yard" />
+          <Picker.Item label="Foot" value="foot" />
+          <Picker.Item label="Inch" value="inch" />
         </Picker>
         <Picker selectedValue={lengthTwo} onValueChange={(itemValue) => setLengthTwo(itemValue)}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
+          <Picker.Item label="Kilometer" value="kilometer" />
+          <Picker.Item label="Meter" value="meter" />
+          <Picker.Item label="Centimeter" value="centimeter" />
+          <Picker.Item label="Millimeter" value="millimeter" />
+          <Picker.Item label="Nanometer" value="nanometer" />
+          <Picker.Item label="Mile" value="mile" />
+          <Picker.Item label="Yard" value="yard" />
+          <Picker.Item label="Foot" value="foot" />
+          <Picker.Item label="Inch" value="inch" />
         </Picker>
         <TouchableOpacity onPress={clearLength}>
           <Text>Clear</Text>
@@ -1289,8 +1387,8 @@ export default function App() {
     const setScreenHome = () => {
       setScreen('home');
       setMassResult(0);
-      setMassOne('squareMeter');
-      setMassTwo('squareKilometer');
+      setMassOne('kilogram');
+      setMassTwo('gram');
     };
 
     const resultMass = (value) => {
@@ -1321,90 +1419,6 @@ export default function App() {
       } else if (massOne === 'squareMeter' && massTwo === 'hectare') {
         if (value !== '') {
           setMassResult((Number(value) / 10000).toFixed(4));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMeter' && massTwo === 'acre') {
-        if (value !== '') {
-          setMassResult((Number(value) / 4047).toFixed(4));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'squareMeter') {
-        if (value !== '') {
-          setMassResult((Number(value) * 1000000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'squareMile') {
-        if (value !== '') {
-          setMassResult((Number(value) / 2.59).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'squareYard') {
-        if (value !== '') {
-          setMassResult((Number(value) * 1196000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'squareFoot') {
-        if (value !== '') {
-          setMassResult((Number(value) * 10760000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'squareInch') {
-        if (value !== '') {
-          setMassResult((Number(value) * 1550000000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'hectare') {
-        if (value !== '') {
-          setMassResult((Number(value) * 100).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareKilometer' && massTwo === 'acre') {
-        if (value !== '') {
-          setMassResult((Number(value) * 247).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'squareKilometer') {
-        if (value !== '') {
-          setMassResult((Number(value) * 2.59).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'squareMeter') {
-        if (value !== '') {
-          setMassResult((Number(value) * 2590000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'squareYard') {
-        if (value !== '') {
-          setMassResult((Number(value) * 3098000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'squareFoot') {
-        if (value !== '') {
-          setMassResult((Number(value) * 27880000).toFixed(1));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'squareInch') {
-        if (value !== '') {
-          setMassResult((Number(value) * 4014000000).toFixed(9));
-        } else {
-          setMassResult('');
-        }
-      } else if (massOne === 'squareMile' && massTwo === 'hectare') {
-        if (value !== '') {
-          setMassResult((Number(value) * 259).toFixed(1));
         } else {
           setMassResult('');
         }
@@ -1654,24 +1668,22 @@ export default function App() {
         <Text>Select a value</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeMass} ref={input => setMassInput(input)} />
         <Picker selectedValue={massOne} onValueChange={(itemValue) => setMassOne(itemValue)}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
+          <Picker.Item label="Tonne" value="tonne" />
+          <Picker.Item label="Kilogram" value="kilogram" />
+          <Picker.Item label="Gram" value="gram" />
+          <Picker.Item label="Milligram" value="milligram" />
+          <Picker.Item label="Microgram" value="microgram" />
+          <Picker.Item label="Pound" value="pound" />
+          <Picker.Item label="Once" value="once" />
         </Picker>
         <Picker selectedValue={massTwo} onValueChange={(itemValue) => setMassTwo(itemValue)}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
+          <Picker.Item label="Tonne" value="tonne" />
+          <Picker.Item label="Kilogram" value="kilogram" />
+          <Picker.Item label="Gram" value="gram" />
+          <Picker.Item label="Milligram" value="milligram" />
+          <Picker.Item label="Microgram" value="microgram" />
+          <Picker.Item label="Pound" value="pound" />
+          <Picker.Item label="Once" value="once" />
         </Picker>
         <TouchableOpacity onPress={clearMass}>
           <Text>Clear</Text>
