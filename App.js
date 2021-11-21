@@ -739,8 +739,9 @@ export default function App() {
 
     return (
       <View style={Styles.digitalStorageContainer}>
-        <Text style={Styles.digitalStorageTitle}>DigitalStorage</Text>
-        <Text style={Styles.digitalStorageCaption}>Select a value</Text>
+        <StatusBar backgroundColor="#003e7f" />
+        <Text style={Styles.digitalStorageTitle}>Digital Storage</Text>
+        <Text style={Styles.digitalStorageCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeDigitalStorage} ref={input => setDigitalStorageInput(input)} style={Styles.digitalStorageTextInput} />
         <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setDigitalStorageOne(itemValue)} style={Styles.digitalStoragePicker}>
           <Picker.Item label="Bit" value="bit" />
@@ -761,7 +762,7 @@ export default function App() {
         <TouchableOpacity onPress={clearDigitalStorage} style={Styles.digitalStorageButtonClear}>
           <Text style={Styles.digitalStorageButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.digitalStorageResult}>{digitalStorageResult !== 0 ? digitalStorageResult : ''}</Text>
+        <Text style={Styles.digitalStorageResult}>{` The result is: ${digitalStorageResult !== 0 ? digitalStorageResult : ''}`}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -870,8 +871,9 @@ export default function App() {
 
     return (
       <View style={Styles.frequencyContainer}>
+        <StatusBar backgroundColor="#002966" />
         <Text style={Styles.frequencyTitle}>Frequency</Text>
-        <Text style={Styles.frequencyCaption}>Select a value</Text>
+        <Text style={Styles.frequencyCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeFrequency} ref={input => setFrequencyInput(input)} style={Styles.frequencyTextInput} />
         <Picker selectedValue={frequencyOne} onValueChange={(itemValue) => setFrequencyOne(itemValue)} style={Styles.frequencyPicker}>
           <Picker.Item label="Hertz" value="hertz" />
@@ -888,7 +890,7 @@ export default function App() {
         <TouchableOpacity onPress={clearFrequency} style={Styles.frequencyButtonClear}>
           <Text style={Styles.frequencyButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.frequencyResult}>{frequencyResult !== 0 ? frequencyResult : ''}</Text>
+        <Text style={Styles.frequencyResult}>{`The result is: ${frequencyResult !== 0 ? frequencyResult : ''}`}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1357,8 +1359,9 @@ export default function App() {
 
     return (
       <View style={Styles.lengthContainer}>
+        <StatusBar backgroundColor="#002966" />
         <Text style={Styles.lengthTitle}>Length</Text>
-        <Text style={Styles.lengthCaption}>Select a value</Text>
+        <Text style={Styles.lengthCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeLength} ref={input => setLengthInput(input)} style={Styles.lengthTextInput} />
         <Picker selectedValue={lengthOne} onValueChange={(itemValue) => setLengthOne(itemValue)} style={Styles.lengthPicker}>
           <Picker.Item label="Kilometer" value="kilometer" />
@@ -1385,7 +1388,7 @@ export default function App() {
         <TouchableOpacity onPress={clearLength} style={Styles.lengthButtonClear}>
           <Text style={Styles.lengthButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.lengthResult}>{lengthResult !== 0 ? lengthResult : ''}</Text>
+        <Text style={Styles.lengthResult}>{`The result is: ${lengthResult !== 0 ? lengthResult : ''}`}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1674,8 +1677,9 @@ export default function App() {
 
     return (
       <View style={Styles.massContainer}>
+        <StatusBar backgroundColor="#00154d" />
         <Text style={Styles.massTitle}>Mass</Text>
-        <Text style={Styles.massCaption}>Select a value</Text>
+        <Text style={Styles.massCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeMass} ref={input => setMassInput(input)} style={Styles.massTextInput} />
         <Picker selectedValue={massOne} onValueChange={(itemValue) => setMassOne(itemValue)} style={Styles.massPicker}>
           <Picker.Item label="Tonne" value="tonne" />
@@ -1698,7 +1702,7 @@ export default function App() {
         <TouchableOpacity onPress={clearMass} style={Styles.massButtonClear}>
           <Text style={Styles.massButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.massResult}>{massResult !== 0 ? massResult : ''}</Text>
+        <Text style={Styles.massResult}>{`The result is: ${massResult !== 0 ? massResult : ''}`}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1854,30 +1858,31 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Speed</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeSpeed} ref={input => setSpeedInput(input)} />
-        <Picker selectedValue={speedOne} onValueChange={(itemValue) => setSpeedOne(itemValue)}>
+      <View style={Styles.speedContainer}>
+        <StatusBar backgroundColor="#00154d" />
+        <Text style={Styles.speedTitle}>Speed</Text>
+        <Text style={Styles.speedCaption}>Select the first measurement</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeSpeed} ref={input => setSpeedInput(input)} style={Styles.speedTextInput} />
+        <Picker selectedValue={speedOne} onValueChange={(itemValue) => setSpeedOne(itemValue)} style={Styles.speedPicker}>
           <Picker.Item label="Meter per Second" value="meterPerSecond" />
           <Picker.Item label="Miles per Hour" value="milesPerHour" />
           <Picker.Item label="Foot per Second" value="footPerSecond" />
           <Picker.Item label="Kilometer per Hour" value="kilometerPerHour" />
           <Picker.Item label="Knot" value="knot" />
         </Picker>
-        <Picker selectedValue={speedTwo} onValueChange={(itemValue) => setSpeedTwo(itemValue)}>
+        <Picker selectedValue={speedTwo} onValueChange={(itemValue) => setSpeedTwo(itemValue)} style={Styles.speedPicker}>
           <Picker.Item label="Meter per Second" value="meterPerSecond" />
           <Picker.Item label="Miles per Hour" value="milesPerHour" />
           <Picker.Item label="Foot per Second" value="footPerSecond" />
           <Picker.Item label="Kilometer per Hour" value="kilometerPerHour" />
           <Picker.Item label="Knot" value="knot" />
         </Picker>
-        <TouchableOpacity onPress={clearSpeed}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearSpeed} style={Styles.speedButtonClear}>
+          <Text style={Styles.speedButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{speedResult !== 0 ? speedResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.speedResult}>{`The result is: ${speedResult !== 0 ? speedResult : ''}`}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -1947,26 +1952,27 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Temperature</Text>
-        <Text>Select the first measurement</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeTemperature} ref={input => setTemperatureInput(input)} />
-        <Picker selectedValue={temperatureOne} onValueChange={(itemValue) => setTemperatureOne(itemValue)}>
+      <View style={Styles.temperatureContainer}>
+        <StatusBar backgroundColor="#000536" />
+        <Text style={Styles.temperatureTitle}>Temperature</Text>
+        <Text style={Styles.temperatureCaption}>Select the first measurement</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeTemperature} ref={input => setTemperatureInput(input)} style={Styles.temperatureTextInput} />
+        <Picker selectedValue={temperatureOne} onValueChange={(itemValue) => setTemperatureOne(itemValue)} style={Styles.temperaturePicker}>
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Kelvin" value="kelvin" />
         </Picker>
-        <Picker selectedValue={temperatureTwo} onValueChange={(itemValue) => setTemperatureTwo(itemValue)}>
+        <Picker selectedValue={temperatureTwo} onValueChange={(itemValue) => setTemperatureTwo(itemValue)} style={Styles.temperaturePicker}>
           <Picker.Item label="Fahrenheit" value="fahrenheit" />
           <Picker.Item label="Celsius" value="celsius" />
           <Picker.Item label="Kelvin" value="kelvin" />
         </Picker>
-        <TouchableOpacity onPress={clearTemperature}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearTemperature} style={Styles.temperatureButtonClear}>
+          <Text style={Styles.temperatureButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{`The result is: ${temperatureResult !== 0 ? temperatureResult : ''}`}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.temperatureResult}>{`The result is: ${temperatureResult !== 0 ? temperatureResult : ''}`}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -2432,11 +2438,12 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Time</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeTime} ref={input => setTimeInput(input)} />
-        <Picker selectedValue={timeOne} onValueChange={(itemValue) => setTimeOne(itemValue)}>
+      <View style={Styles.timeContainer}>
+        <StatusBar backgroundColor="#000536" />
+        <Text style={Styles.timeTitle}>Time</Text>
+        <Text style={Styles.timeCaption}>Select the first measurement</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeTime} ref={input => setTimeInput(input)} style={Styles.timeTextInput} />
+        <Picker selectedValue={timeOne} onValueChange={(itemValue) => setTimeOne(itemValue)} style={Styles.timePicker}>
           <Picker.Item label="Second" value="second" />
           <Picker.Item label="Minute" value="minute" />
           <Picker.Item label="Hour" value="hour" />
@@ -2447,7 +2454,7 @@ export default function App() {
           <Picker.Item label="Decade" value="decade" />
           <Picker.Item label="Century" value="century" />
         </Picker>
-        <Picker selectedValue={timeTwo} onValueChange={(itemValue) => setTimeTwo(itemValue)}>
+        <Picker selectedValue={timeTwo} onValueChange={(itemValue) => setTimeTwo(itemValue)} style={Styles.timePicker}>
           <Picker.Item label="Second" value="second" />
           <Picker.Item label="Minute" value="minute" />
           <Picker.Item label="Hour" value="hour" />
@@ -2458,12 +2465,12 @@ export default function App() {
           <Picker.Item label="Decade" value="decade" />
           <Picker.Item label="Century" value="century" />
         </Picker>
-        <TouchableOpacity onPress={clearTime}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearTime} style={Styles.timeButtonClear}>
+          <Text style={Styles.timeButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{timeResult !== 0 ? timeResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.timeResult}>{`The result is: ${timeResult !== 0 ? timeResult : ''}`}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -2635,7 +2642,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 113,
     alignSelf: 'center',
   },
   digitalStorageContainer: {
@@ -2643,7 +2650,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#003e7f',
   },
   digitalStorageTitle: {
-    fontSize: 60,
+    fontSize: 40,
     fontFamily: 'Montserrat-ExtraBold',
     color: '#fff',
     textAlign: 'center',
@@ -2692,7 +2699,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 140,
     alignSelf: 'center',
   },
   frequencyContainer: {
@@ -2700,7 +2707,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#002966',
   },
   frequencyTitle: {
-    fontSize: 60,
+    fontSize: 55,
     fontFamily: 'Montserrat-ExtraBold',
     color: '#fff',
     textAlign: 'center',
@@ -2749,7 +2756,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 119,
     alignSelf: 'center',
   },
   lengthContainer: {
@@ -2806,7 +2813,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 112,
     alignSelf: 'center',
   },
   massContainer: {
@@ -2863,7 +2870,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 112,
     alignSelf: 'center',
   },
   speedContainer: {
@@ -2920,7 +2927,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 112,
     alignSelf: 'center',
   },
   temperatureContainer: {
@@ -2928,7 +2935,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#000536',
   },
   temperatureTitle: {
-    fontSize: 60,
+    fontSize: 48,
     fontFamily: 'Montserrat-ExtraBold',
     color: '#fff',
     textAlign: 'center',
@@ -2977,12 +2984,12 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 128,
     alignSelf: 'center',
   },
   timeContainer: {
     flex: 1,
-    backgroundColor: '#000536 ',
+    backgroundColor: '#000536',
   },
   timeTitle: {
     fontSize: 60,
@@ -3034,7 +3041,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 110,
+    marginBottom: 112,
     alignSelf: 'center',
   },
 });
