@@ -94,30 +94,38 @@ export default function App() {
       <View style={Styles.homeContainer}>
         <StatusBar backgroundColor="#000" />
         <Text style={Styles.homeTitle}>Home</Text>
-        <TouchableOpacity onPress={setScreenArea} style={Styles.homeButtonArea}>
-          <Text style={Styles.homeButtonsText}>Area</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenDigitalStorage} style={Styles.homeButtonDigitalStorage}>
-          <Text style={Styles.homeButtonsText}>Digital Storage</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenFrequency} style={Styles.homeButtonFrequency}>
-          <Text style={Styles.homeButtonsText}>Frequency</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenLength} style={Styles.homeButtonLenght}>
-          <Text style={Styles.homeButtonsText}>Length</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenMass} style={Styles.homeButtonMass}>
-          <Text style={Styles.homeButtonsText}>Mass</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenSpeed} style={Styles.homeButtonSpeed}>
-          <Text style={Styles.homeButtonsText}>Speed</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenTemperature} style={Styles.homeButtonTemperature}>
-          <Text style={Styles.homeButtonsText}>Temperature</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={setScreenTime} style={Styles.homeButtonTime}>
-          <Text style={Styles.homeButtonsText}>Time</Text>
-        </TouchableOpacity>
+        <View style={Styles.homeButtonsContainer}>
+          <TouchableOpacity onPress={setScreenArea} style={Styles.homeButtonArea}>
+            <Text style={Styles.homeButtonsText}>Area</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={setScreenDigitalStorage} style={Styles.homeButtonDigitalStorage}>
+            <Text style={Styles.homeButtonsText}>Digital Storage</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={Styles.homeButtonsContainer}>
+          <TouchableOpacity onPress={setScreenFrequency} style={Styles.homeButtonFrequency}>
+            <Text style={Styles.homeButtonsText}>Frequency</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={setScreenLength} style={Styles.homeButtonLenght}>
+            <Text style={Styles.homeButtonsText}>Length</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={Styles.homeButtonsContainer}>
+          <TouchableOpacity onPress={setScreenMass} style={Styles.homeButtonMass}>
+            <Text style={Styles.homeButtonsText}>Mass</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={setScreenSpeed} style={Styles.homeButtonSpeed}>
+            <Text style={Styles.homeButtonsText}>Speed</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={Styles.homeButtonsContainer}>
+          <TouchableOpacity onPress={setScreenTemperature} style={Styles.homeButtonTemperature}>
+            <Text style={Styles.homeButtonsText}>Temperature</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={setScreenTime} style={Styles.homeButtonTime}>
+            <Text style={Styles.homeButtonsText}>Time</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   };
@@ -487,12 +495,12 @@ export default function App() {
 
     return (
       <View style={Styles.areaContainer}>
-        <StatusBar backgroundColor="#0086d0" />
+        <StatusBar backgroundColor="#003e7f" />
         <Text style={Styles.areaTitle}>Area</Text>
         <Text style={Styles.areaCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} style={Styles.areaTextInput} />
-        <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
+        <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)} style={Styles.areaPicker} >
+          <Picker.Item label="Square Kilometer" value="squareKilometer"  />
           <Picker.Item label="Square Meter" value="squareMeter" />
           <Picker.Item label="Square Mile" value="squareMile" />
           <Picker.Item label="Square Yard" value="squareYard" />
@@ -501,7 +509,7 @@ export default function App() {
           <Picker.Item label="Hectare" value="hectare" />
           <Picker.Item label="Acre" value="acre" />
         </Picker>
-        <Picker selectedValue={areaTwo} onValueChange={(itemValue) => setAreaTwo(itemValue)}>
+        <Picker selectedValue={areaTwo} onValueChange={(itemValue) => setAreaTwo(itemValue)} style={Styles.areaPicker}>
           <Picker.Item label="Square Kilometer" value="squareKilometer" />
           <Picker.Item label="Square Meter" value="squareMeter" />
           <Picker.Item label="Square Mile" value="squareMile" />
@@ -2471,60 +2479,66 @@ const Styles = StyleSheet.create({
   },
   homeTitle: {
     fontSize: 60,
-    fontWeight: '900',
+    fontFamily: 'Montserrat-ExtraBold',
     color: '#fff',
-    marginBottom: 70,
-    marginTop: -20,
+    marginBottom: 180,
+    marginTop: -120,
+  },
+  homeButtonsContainer: {
+    flexDirection: 'row',
   },
   homeButtonArea: {
-    backgroundColor: '#0086d0',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#003e7f',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    marginRight: 10,
     borderRadius: 2,
   },
   homeButtonDigitalStorage: {
-    backgroundColor: '#006db5',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#003e7f',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
     borderRadius: 2,
   },
   homeButtonFrequency: {
-    backgroundColor: '#00559a',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#002966',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    marginRight: 10,
     borderRadius: 2,
   },
   homeButtonLenght: {
-    backgroundColor: '#003e7f',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#002966',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
     borderRadius: 2,
   },
   homeButtonMass: {
-    backgroundColor: '#002966',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#00154d',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    marginRight: 10,
     borderRadius: 2,
   },
   homeButtonSpeed: {
     backgroundColor: '#00154d',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
@@ -2532,28 +2546,29 @@ const Styles = StyleSheet.create({
   },
   homeButtonTemperature: {
     backgroundColor: '#000536',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    marginRight: 10,
     borderRadius: 2,
   },
   homeButtonTime: {
-    backgroundColor: '#000128',
-    width: Dimensions.get('screen').width / 1.5,
-    height: 50,
+    backgroundColor: '#000536',
+    width: Dimensions.get('screen').width / 2.5,
+    height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 2,
   },
   homeButtonsText: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontFamily: 'Montserrat-Bold',
     color: '#fff'
   },
   backToHomeButton: {
-    width: Dimensions.get('screen').width / 1.8,
+    width: Dimensions.get('screen').width / 1.1,
     backgroundColor: '#000',
     alignSelf: 'center',
     justifyContent: 'center',
@@ -2562,31 +2577,46 @@ const Styles = StyleSheet.create({
     borderRadius: 4,
   },
   backToHomeButtonText: {
-    color: '#0086d0',
+    color: '#fff',
     fontSize: 25,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-ExtraBold',
   },
   areaContainer: {
     flex: 1,
-    backgroundColor: '#0086d0'
+    backgroundColor: '#003e7f',
   },
   areaTitle: {
     fontSize: 60,
-    fontWeight: '900',
-    color: '#000',
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
   },
   areaCaption: {
     fontSize: 20,
-    color: '#000',
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
     paddingLeft: 15,
+    alignSelf: 'center',
   },
   areaTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
     paddingLeft: 15,
     fontSize: 18,
     marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  areaPicker: {
+    color: '#fff',
+    fontFamily: 'Montserrat-Bold',
+  },
+  areaPicker2: {
+    fontFamily: 'Montserrat-Bold',
   },
   areaButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
@@ -2594,20 +2624,22 @@ const Styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
-    borderRadius: 4,
-    marginTop: 40,
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
   },
   areaButtonClearText: {
-    color: '#0086d0',
+    color: '#fff',
     fontSize: 22,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-ExtraBold',
   },
   areaResult: {
-    color: '#000',
+    color: '#fff',
     fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
   },
 });
