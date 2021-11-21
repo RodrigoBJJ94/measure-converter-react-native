@@ -500,7 +500,7 @@ export default function App() {
         <Text style={Styles.areaCaption}>Select the first measurement</Text>
         <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} style={Styles.areaTextInput} />
         <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)} style={Styles.areaPicker} >
-          <Picker.Item label="Square Kilometer" value="squareKilometer"  />
+          <Picker.Item label="Square Kilometer" value="squareKilometer" />
           <Picker.Item label="Square Meter" value="squareMeter" />
           <Picker.Item label="Square Mile" value="squareMile" />
           <Picker.Item label="Square Yard" value="squareYard" />
@@ -738,11 +738,11 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>DigitalStorage</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeDigitalStorage} ref={input => setDigitalStorageInput(input)} />
-        <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setDigitalStorageOne(itemValue)}>
+      <View style={Styles.digitalStorageContainer}>
+        <Text style={Styles.digitalStorageTitle}>DigitalStorage</Text>
+        <Text style={Styles.digitalStorageCaption}>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeDigitalStorage} ref={input => setDigitalStorageInput(input)} style={Styles.digitalStorageTextInput} />
+        <Picker selectedValue={digitalStorageOne} onValueChange={(itemValue) => setDigitalStorageOne(itemValue)} style={Styles.digitalStoragePicker}>
           <Picker.Item label="Bit" value="bit" />
           <Picker.Item label="Byte" value="byte" />
           <Picker.Item label="Kilobyte" value="kilobyte" />
@@ -750,7 +750,7 @@ export default function App() {
           <Picker.Item label="Gigabyte" value="gigabyte" />
           <Picker.Item label="Terabyte" value="terabyte" />
         </Picker>
-        <Picker selectedValue={digitalStorageTwo} onValueChange={(itemValue) => setDigitalStorageTwo(itemValue)}>
+        <Picker selectedValue={digitalStorageTwo} onValueChange={(itemValue) => setDigitalStorageTwo(itemValue)} style={Styles.digitalStoragePicker}>
           <Picker.Item label="Bit" value="bit" />
           <Picker.Item label="Byte" value="byte" />
           <Picker.Item label="Kilobyte" value="kilobyte" />
@@ -758,12 +758,12 @@ export default function App() {
           <Picker.Item label="Gigabyte" value="gigabyte" />
           <Picker.Item label="Terabyte" value="terabyte" />
         </Picker>
-        <TouchableOpacity onPress={clearDigitalStorage}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearDigitalStorage} style={Styles.digitalStorageButtonClear}>
+          <Text style={Styles.digitalStorageButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{digitalStorageResult !== 0 ? digitalStorageResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.digitalStorageResult}>{digitalStorageResult !== 0 ? digitalStorageResult : ''}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -869,28 +869,28 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Frequency</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeFrequency} ref={input => setFrequencyInput(input)} />
-        <Picker selectedValue={frequencyOne} onValueChange={(itemValue) => setFrequencyOne(itemValue)}>
+      <View style={Styles.frequencyContainer}>
+        <Text style={Styles.frequencyTitle}>Frequency</Text>
+        <Text style={Styles.frequencyCaption}>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeFrequency} ref={input => setFrequencyInput(input)} style={Styles.frequencyTextInput} />
+        <Picker selectedValue={frequencyOne} onValueChange={(itemValue) => setFrequencyOne(itemValue)} style={Styles.frequencyPicker}>
           <Picker.Item label="Hertz" value="hertz" />
           <Picker.Item label="Kilohertz" value="kilohertz" />
           <Picker.Item label="Megahertz" value="megahertz" />
           <Picker.Item label="Gigahertz" value="gigahertz" />
         </Picker>
-        <Picker selectedValue={frequencyTwo} onValueChange={(itemValue) => setFrequencyTwo(itemValue)}>
+        <Picker selectedValue={frequencyTwo} onValueChange={(itemValue) => setFrequencyTwo(itemValue)} style={Styles.frequencyPicker}>
           <Picker.Item label="Hertz" value="hertz" />
           <Picker.Item label="Kilohertz" value="kilohertz" />
           <Picker.Item label="Megahertz" value="megahertz" />
           <Picker.Item label="Gigahertz" value="gigahertz" />
         </Picker>
-        <TouchableOpacity onPress={clearFrequency}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearFrequency} style={Styles.frequencyButtonClear}>
+          <Text style={Styles.frequencyButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{frequencyResult !== 0 ? frequencyResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.frequencyResult}>{frequencyResult !== 0 ? frequencyResult : ''}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -1356,11 +1356,11 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Length</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeLength} ref={input => setLengthInput(input)} />
-        <Picker selectedValue={lengthOne} onValueChange={(itemValue) => setLengthOne(itemValue)}>
+      <View style={Styles.lengthContainer}>
+        <Text style={Styles.lengthTitle}>Length</Text>
+        <Text style={Styles.lengthCaption}>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeLength} ref={input => setLengthInput(input)} style={Styles.lengthTextInput} />
+        <Picker selectedValue={lengthOne} onValueChange={(itemValue) => setLengthOne(itemValue)} style={Styles.lengthPicker}>
           <Picker.Item label="Kilometer" value="kilometer" />
           <Picker.Item label="Meter" value="meter" />
           <Picker.Item label="Centimeter" value="centimeter" />
@@ -1371,7 +1371,7 @@ export default function App() {
           <Picker.Item label="Foot" value="foot" />
           <Picker.Item label="Inch" value="inch" />
         </Picker>
-        <Picker selectedValue={lengthTwo} onValueChange={(itemValue) => setLengthTwo(itemValue)}>
+        <Picker selectedValue={lengthTwo} onValueChange={(itemValue) => setLengthTwo(itemValue)} style={Styles.lengthPicker}>
           <Picker.Item label="Kilometer" value="kilometer" />
           <Picker.Item label="Meter" value="meter" />
           <Picker.Item label="Centimeter" value="centimeter" />
@@ -1382,12 +1382,12 @@ export default function App() {
           <Picker.Item label="Foot" value="foot" />
           <Picker.Item label="Inch" value="inch" />
         </Picker>
-        <TouchableOpacity onPress={clearLength}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearLength} style={Styles.lengthButtonClear}>
+          <Text style={Styles.lengthButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{lengthResult !== 0 ? lengthResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.lengthResult}>{lengthResult !== 0 ? lengthResult : ''}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -1673,11 +1673,11 @@ export default function App() {
     };
 
     return (
-      <View>
-        <Text>Mass</Text>
-        <Text>Select a value</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeMass} ref={input => setMassInput(input)} />
-        <Picker selectedValue={massOne} onValueChange={(itemValue) => setMassOne(itemValue)}>
+      <View style={Styles.massContainer}>
+        <Text style={Styles.massTitle}>Mass</Text>
+        <Text style={Styles.massCaption}>Select a value</Text>
+        <TextInput keyboardType="numeric" onChangeText={onChangeMass} ref={input => setMassInput(input)} style={Styles.massTextInput} />
+        <Picker selectedValue={massOne} onValueChange={(itemValue) => setMassOne(itemValue)} style={Styles.massPicker}>
           <Picker.Item label="Tonne" value="tonne" />
           <Picker.Item label="Kilogram" value="kilogram" />
           <Picker.Item label="Gram" value="gram" />
@@ -1686,7 +1686,7 @@ export default function App() {
           <Picker.Item label="Pound" value="pound" />
           <Picker.Item label="Once" value="once" />
         </Picker>
-        <Picker selectedValue={massTwo} onValueChange={(itemValue) => setMassTwo(itemValue)}>
+        <Picker selectedValue={massTwo} onValueChange={(itemValue) => setMassTwo(itemValue)} style={Styles.massPicker}>
           <Picker.Item label="Tonne" value="tonne" />
           <Picker.Item label="Kilogram" value="kilogram" />
           <Picker.Item label="Gram" value="gram" />
@@ -1695,12 +1695,12 @@ export default function App() {
           <Picker.Item label="Pound" value="pound" />
           <Picker.Item label="Once" value="once" />
         </Picker>
-        <TouchableOpacity onPress={clearMass}>
-          <Text>Clear</Text>
+        <TouchableOpacity onPress={clearMass} style={Styles.massButtonClear}>
+          <Text style={Styles.massButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text>{massResult !== 0 ? massResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome}>
-          <Text>Go Back to Home</Text>
+        <Text style={Styles.massResult}>{massResult !== 0 ? massResult : ''}</Text>
+        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
+          <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
       </View>
     );
@@ -2613,10 +2613,6 @@ const Styles = StyleSheet.create({
   },
   areaPicker: {
     color: '#fff',
-    fontFamily: 'Montserrat-Bold',
-  },
-  areaPicker2: {
-    fontFamily: 'Montserrat-Bold',
   },
   areaButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
@@ -2634,6 +2630,405 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-ExtraBold',
   },
   areaResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  digitalStorageContainer: {
+    flex: 1,
+    backgroundColor: '#003e7f',
+  },
+  digitalStorageTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  digitalStorageCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  digitalStorageTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  digitalStoragePicker: {
+    color: '#fff',
+  },
+  digitalStorageButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  digitalStorageButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  digitalStorageResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  frequencyContainer: {
+    flex: 1,
+    backgroundColor: '#002966',
+  },
+  frequencyTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  frequencyCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  frequencyTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  frequencyPicker: {
+    color: '#fff',
+  },
+  frequencyButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  frequencyButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  frequencyResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  lengthContainer: {
+    flex: 1,
+    backgroundColor: '#002966',
+  },
+  lengthTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  lengthCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  lengthTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  lengthPicker: {
+    color: '#fff',
+  },
+  lengthButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  lengthButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  lengthResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  massContainer: {
+    flex: 1,
+    backgroundColor: '#00154d',
+  },
+  massTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  massCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  massTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  massPicker: {
+    color: '#fff',
+  },
+  massButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  massButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  massResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  speedContainer: {
+    flex: 1,
+    backgroundColor: '#00154d',
+  },
+  speedTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  speedCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  speedTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  speedPicker: {
+    color: '#fff',
+  },
+  speedButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  speedButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  speedResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  temperatureContainer: {
+    flex: 1,
+    backgroundColor: '#000536',
+  },
+  temperatureTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  temperatureCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  temperatureTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  temperaturePicker: {
+    color: '#fff',
+  },
+  temperatureButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  temperatureButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  temperatureResult: {
+    color: '#fff',
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    paddingLeft: 15,
+    marginTop: 40,
+    marginBottom: 110,
+    alignSelf: 'center',
+  },
+  timeContainer: {
+    flex: 1,
+    backgroundColor: '#000536 ',
+  },
+  timeTitle: {
+    fontSize: 60,
+    fontFamily: 'Montserrat-ExtraBold',
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 50,
+  },
+  timeCaption: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: '#fff',
+    paddingLeft: 15,
+    alignSelf: 'center',
+  },
+  timeTextInput: {
+    backgroundColor: '#fff',
+    width: Dimensions.get('screen').width / 1.2,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    fontSize: 18,
+    marginBottom: 20,
+    marginTop: 15,
+    borderRadius: 3,
+    fontFamily: 'Montserrat-Bold',
+  },
+  timePicker: {
+    color: '#fff',
+  },
+  timeButtonClear: {
+    width: Dimensions.get('screen').width / 4.5,
+    backgroundColor: '#000',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 42,
+    borderRadius: 15,
+    marginTop: 5,
+  },
+  timeButtonClearText: {
+    color: '#fff',
+    fontSize: 22,
+    fontFamily: 'Montserrat-ExtraBold',
+  },
+  timeResult: {
     color: '#fff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
