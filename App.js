@@ -92,7 +92,7 @@ export default function App() {
 
     return (
       <View style={Styles.homeContainer}>
-        <StatusBar backgroundColor="#000" />
+        <StatusBar backgroundColor="#000000" />
         <Text style={Styles.homeTitle}>Home</Text>
         <View style={Styles.homeButtonsContainer}>
           <TouchableOpacity onPress={setScreenArea} style={Styles.homeButtonArea}>
@@ -489,7 +489,7 @@ export default function App() {
     };
 
     const clearArea = () => {
-      setAreaResult('');
+      setAreaResult(0);
       areaInput.clear();
     };
 
@@ -522,7 +522,7 @@ export default function App() {
         <TouchableOpacity onPress={clearArea} style={Styles.areaButtonClear}>
           <Text style={Styles.areaButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.areaResult}>{`The result is: ${areaResult !== 0 ? areaResult : ''}`}</Text>
+        <Text style={Styles.areaResult}>{areaResult !== 0 ? 'The result is: ' : ''}{areaResult !== 0 ? areaResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go back to Home</Text>
         </TouchableOpacity>
@@ -733,7 +733,7 @@ export default function App() {
     };
 
     const clearDigitalStorage = () => {
-      setDigitalStorageResult('');
+      setDigitalStorageResult(0);
       digitalStorageInput.clear();
     };
 
@@ -762,7 +762,7 @@ export default function App() {
         <TouchableOpacity onPress={clearDigitalStorage} style={Styles.digitalStorageButtonClear}>
           <Text style={Styles.digitalStorageButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.digitalStorageResult}>{` The result is: ${digitalStorageResult !== 0 ? digitalStorageResult : ''}`}</Text>
+        <Text style={Styles.digitalStorageResult}>{digitalStorageResult !== 0 ? 'The result is: ' : ''}{digitalStorageResult !== 0 ? digitalStorageResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -865,7 +865,7 @@ export default function App() {
     };
 
     const clearFrequency = () => {
-      setFrequencyResult('');
+      setFrequencyResult(0);
       frequencyInput.clear();
     };
 
@@ -890,7 +890,7 @@ export default function App() {
         <TouchableOpacity onPress={clearFrequency} style={Styles.frequencyButtonClear}>
           <Text style={Styles.frequencyButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.frequencyResult}>{`The result is: ${frequencyResult !== 0 ? frequencyResult : ''}`}</Text>
+        <Text style={Styles.frequencyResult}>{frequencyResult !== 0 ? 'The result is: ' : ''}{frequencyResult !== 0 ? frequencyResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1353,7 +1353,7 @@ export default function App() {
     };
 
     const clearLength = () => {
-      setLengthResult('');
+      setLengthResult(0);
       lengthInput.clear();
     };
 
@@ -1388,7 +1388,7 @@ export default function App() {
         <TouchableOpacity onPress={clearLength} style={Styles.lengthButtonClear}>
           <Text style={Styles.lengthButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.lengthResult}>{`The result is: ${lengthResult !== 0 ? lengthResult : ''}`}</Text>
+        <Text style={Styles.lengthResult}>{lengthResult !== 0 ? 'The result is: ' : ''}{lengthResult !== 0 ? lengthResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1671,7 +1671,7 @@ export default function App() {
     };
 
     const clearMass = () => {
-      setMassResult('');
+      setMassResult(0);
       massInput.clear();
     };
 
@@ -1702,7 +1702,7 @@ export default function App() {
         <TouchableOpacity onPress={clearMass} style={Styles.massButtonClear}>
           <Text style={Styles.massButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.massResult}>{`The result is: ${massResult !== 0 ? massResult : ''}`}</Text>
+        <Text style={Styles.massResult}>{massResult !== 0 ? 'The result is: ' : ''}{massResult !== 0 ? massResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1853,7 +1853,7 @@ export default function App() {
     };
 
     const clearSpeed = () => {
-      setSpeedResult('');
+      setSpeedResult(0);
       speedInput.clear();
     };
 
@@ -1880,7 +1880,7 @@ export default function App() {
         <TouchableOpacity onPress={clearSpeed} style={Styles.speedButtonClear}>
           <Text style={Styles.speedButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.speedResult}>{`The result is: ${speedResult !== 0 ? speedResult : ''}`}</Text>
+        <Text style={Styles.speedResult}>{speedResult !== 0 ? 'The result is: ' : ''}{speedResult !== 0 ? speedResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -1947,7 +1947,7 @@ export default function App() {
     }
 
     const clearTemperature = () => {
-      setTemperatureResult('');
+      setTemperatureResult(0);
       temperatureInput.clear();
     };
 
@@ -1970,7 +1970,7 @@ export default function App() {
         <TouchableOpacity onPress={clearTemperature} style={Styles.temperatureButtonClear}>
           <Text style={Styles.temperatureButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.temperatureResult}>{`The result is: ${temperatureResult !== 0 ? temperatureResult : ''}`}</Text>
+        <Text style={Styles.temperatureResult}>{temperatureResult !== 0 ? 'The result is: ' : ''}{temperatureResult !== 0 ? temperatureResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -2433,7 +2433,7 @@ export default function App() {
     };
 
     const clearTime = () => {
-      setTimeResult('');
+      setTimeResult(0);
       timeInput.clear();
     };
 
@@ -2468,7 +2468,7 @@ export default function App() {
         <TouchableOpacity onPress={clearTime} style={Styles.timeButtonClear}>
           <Text style={Styles.timeButtonClearText}>Clear</Text>
         </TouchableOpacity>
-        <Text style={Styles.timeResult}>{`The result is: ${timeResult !== 0 ? timeResult : ''}`}</Text>
+        <Text style={Styles.timeResult}>{timeResult !== 0 ? 'The result is: ' : ''}{timeResult !== 0 ? timeResult : ''}</Text>
         <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
           <Text style={Styles.backToHomeButtonText}>Go Back to Home</Text>
         </TouchableOpacity>
@@ -2482,14 +2482,14 @@ const Styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000'
+    backgroundColor: '#000000',
   },
   homeTitle: {
-    fontSize: 60,
+    fontSize: 70,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
-    marginBottom: 180,
-    marginTop: -120,
+    color: '#ffffff',
+    marginBottom: 160,
+    marginTop: -40,
   },
   homeButtonsContainer: {
     flexDirection: 'row',
@@ -2572,7 +2572,7 @@ const Styles = StyleSheet.create({
   homeButtonsText: {
     fontSize: 18,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff'
+    color: '#ffffff'
   },
   backToHomeButton: {
     width: Dimensions.get('screen').width / 1.1,
@@ -2584,7 +2584,7 @@ const Styles = StyleSheet.create({
     borderRadius: 4,
   },
   backToHomeButtonText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 25,
     fontFamily: 'Montserrat-ExtraBold',
   },
@@ -2595,7 +2595,7 @@ const Styles = StyleSheet.create({
   areaTitle: {
     fontSize: 60,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2603,12 +2603,12 @@ const Styles = StyleSheet.create({
   areaCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   areaTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2623,7 +2623,7 @@ const Styles = StyleSheet.create({
   },
   areaButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2632,12 +2632,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   areaButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   areaResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2652,7 +2652,7 @@ const Styles = StyleSheet.create({
   digitalStorageTitle: {
     fontSize: 40,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2660,12 +2660,12 @@ const Styles = StyleSheet.create({
   digitalStorageCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   digitalStorageTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2676,11 +2676,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   digitalStoragePicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   digitalStorageButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2694,7 +2694,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-ExtraBold',
   },
   digitalStorageResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2709,7 +2709,7 @@ const Styles = StyleSheet.create({
   frequencyTitle: {
     fontSize: 55,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2717,12 +2717,12 @@ const Styles = StyleSheet.create({
   frequencyCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   frequencyTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2733,11 +2733,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   frequencyPicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   frequencyButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2746,12 +2746,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   frequencyButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   frequencyResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2766,7 +2766,7 @@ const Styles = StyleSheet.create({
   lengthTitle: {
     fontSize: 60,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2774,12 +2774,12 @@ const Styles = StyleSheet.create({
   lengthCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   lengthTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2790,11 +2790,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   lengthPicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   lengthButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2803,12 +2803,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   lengthButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   lengthResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2823,7 +2823,7 @@ const Styles = StyleSheet.create({
   massTitle: {
     fontSize: 60,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2831,12 +2831,12 @@ const Styles = StyleSheet.create({
   massCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   massTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2847,11 +2847,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   massPicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   massButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2860,12 +2860,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   massButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   massResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2880,7 +2880,7 @@ const Styles = StyleSheet.create({
   speedTitle: {
     fontSize: 60,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2888,12 +2888,12 @@ const Styles = StyleSheet.create({
   speedCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   speedTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2904,11 +2904,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   speedPicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   speedButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2917,12 +2917,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   speedButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   speedResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2937,7 +2937,7 @@ const Styles = StyleSheet.create({
   temperatureTitle: {
     fontSize: 48,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -2945,12 +2945,12 @@ const Styles = StyleSheet.create({
   temperatureCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   temperatureTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -2961,11 +2961,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   temperaturePicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   temperatureButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -2974,12 +2974,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   temperatureButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   temperatureResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
@@ -2994,7 +2994,7 @@ const Styles = StyleSheet.create({
   timeTitle: {
     fontSize: 60,
     fontFamily: 'Montserrat-ExtraBold',
-    color: '#fff',
+    color: '#ffffff',
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
@@ -3002,12 +3002,12 @@ const Styles = StyleSheet.create({
   timeCaption: {
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    color: '#ffffff',
     paddingLeft: 15,
     alignSelf: 'center',
   },
   timeTextInput: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
     alignSelf: 'center',
     paddingLeft: 15,
@@ -3018,11 +3018,11 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   timePicker: {
-    color: '#fff',
+    color: '#ffffff',
   },
   timeButtonClear: {
     width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000',
+    backgroundColor: '#000000',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -3031,12 +3031,12 @@ const Styles = StyleSheet.create({
     marginTop: 5,
   },
   timeButtonClearText: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 22,
     fontFamily: 'Montserrat-ExtraBold',
   },
   timeResult: {
-    color: '#fff',
+    color: '#ffffff',
     fontSize: 20,
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
