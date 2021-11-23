@@ -1,0 +1,87 @@
+import { StyleSheet, Dimensions } from 'react-native';
+
+export default Styles = StyleSheet.create({
+    homeButtonsContainer: {
+        flexDirection: 'row',
+    },
+    homeButtonArea: {
+        backgroundColor: '#003e7f',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginRight: 10,
+        borderRadius: 2,
+    },
+    homeButtonDigitalStorage: {
+        backgroundColor: '#003e7f',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        borderRadius: 2,
+    },
+    homeButtonFrequency: {
+        backgroundColor: '#002966',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginRight: 10,
+        borderRadius: 2,
+    },
+    homeButtonLenght: {
+        backgroundColor: '#002966',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        borderRadius: 2,
+    },
+    homeButtonMass: {
+        backgroundColor: '#00154d',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginRight: 10,
+        borderRadius: 2,
+    },
+    homeButtonSpeed: {
+        backgroundColor: '#00154d',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        borderRadius: 2,
+    },
+    homeButtonTemperature: {
+        backgroundColor: '#000536',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginRight: 10,
+        borderRadius: 2,
+    },
+    homeButtonTime: {
+        backgroundColor: '#000536',
+        width: Dimensions.get('screen').width / 2.5,
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 2,
+    },
+    homeButtonsText: {
+        fontSize: 18,
+        fontFamily: 'Montserrat-Bold',
+        color: '#ffffff'
+    }
+});

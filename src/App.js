@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, Dimensions, StatusBar } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import Home from './pages/Home/Home/Home';
+import Area from './pages/Area/Area/Area';
 
 export default function App() {
   const [screen, setScreen] = useState('home');
@@ -24,10 +26,6 @@ export default function App() {
   const [digitalStorageTwo, setDigitalStorageTwo] = useState('kilobyte');
   const [digitalStorageInput, setDigitalStorageInput] = useState('');
   const [digitalStorageResult, setDigitalStorageResult] = useState(0);
-  const [areaOne, setAreaOne] = useState('squareMeter');
-  const [areaTwo, setAreaTwo] = useState('squareKilometer');
-  const [areaInput, setAreaInput] = useState('');
-  const [areaResult, setAreaResult] = useState(0);
   const [lengthOne, setLengthOne] = useState('meter');
   const [lengthTwo, setLengthTwo] = useState('centimeter');
   const [lengthInput, setLengthInput] = useState('');
@@ -58,476 +56,11 @@ export default function App() {
   };
 
   function getScreenMenu() {
-    const setScreenArea = () => {
-      setScreen('area');
-    };
-
-    const setScreenDigitalStorage = () => {
-      setScreen('digitalStorage');
-    };
-
-    const setScreenFrequency = () => {
-      setScreen('frequency');
-    };
-
-    const setScreenLength = () => {
-      setScreen('length');
-    };
-
-    const setScreenMass = () => {
-      setScreen('mass');
-    };
-
-    const setScreenSpeed = () => {
-      setScreen('speed');
-    };
-
-    const setScreenTemperature = () => {
-      setScreen('temperature');
-    };
-
-    const setScreenTime = () => {
-      setScreen('time');
-    };
-
-    return (
-      <View style={Styles.homeContainer}>
-        <StatusBar backgroundColor="#000000" />
-        <Text style={Styles.homeTitle}>Home</Text>
-        <View style={Styles.homeButtonsContainer}>
-          <TouchableOpacity onPress={setScreenArea} style={Styles.homeButtonArea}>
-            <Text style={Styles.homeButtonsText}>Area</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={setScreenDigitalStorage} style={Styles.homeButtonDigitalStorage}>
-            <Text style={Styles.homeButtonsText}>Digital Storage</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={Styles.homeButtonsContainer}>
-          <TouchableOpacity onPress={setScreenFrequency} style={Styles.homeButtonFrequency}>
-            <Text style={Styles.homeButtonsText}>Frequency</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={setScreenLength} style={Styles.homeButtonLenght}>
-            <Text style={Styles.homeButtonsText}>Length</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={Styles.homeButtonsContainer}>
-          <TouchableOpacity onPress={setScreenMass} style={Styles.homeButtonMass}>
-            <Text style={Styles.homeButtonsText}>Mass</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={setScreenSpeed} style={Styles.homeButtonSpeed}>
-            <Text style={Styles.homeButtonsText}>Speed</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={Styles.homeButtonsContainer}>
-          <TouchableOpacity onPress={setScreenTemperature} style={Styles.homeButtonTemperature}>
-            <Text style={Styles.homeButtonsText}>Temperature</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={setScreenTime} style={Styles.homeButtonTime}>
-            <Text style={Styles.homeButtonsText}>Time</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
+    return <Home setScreen={setScreen} />
   };
 
   function getScreenArea() {
-    const setScreenHome = () => {
-      setScreen('home');
-      setAreaResult(0);
-      setAreaOne('squareMeter');
-      setAreaTwo('squareKilometer');
-    };
-
-    const resultArea = (value) => {
-      if (areaOne === 'squareMeter' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 2590000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMeter' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1.196).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMeter' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 10.764).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMeter' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1550).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMeter' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 10000).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMeter' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 4047).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1000000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 2.59).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1196000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 10760000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1550000000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 100).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareKilometer' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 247).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 2.59).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 2590000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 3098000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 27880000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 4014000000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 259).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareMile' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 640).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1196000).toFixed(6));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1.196).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 3098000).toFixed(7));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 9).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 1296).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 11960).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareYard' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 4840).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 10760000).toFixed(7));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 10.764).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 27880000).toFixed(8));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 9).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 144).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 107639).toFixed(6));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareFoot' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 43560).toFixed(5));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1550000000).toFixed(9));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1550).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 4014000000).toFixed(10));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1296).toFixed(4));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 144).toFixed(3));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 15500000).toFixed(7));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'squareInch' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 6273000).toFixed(7));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 100).toFixed(2));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 10000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 259).toFixed(3));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 11960).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 107639).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 15500000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'hectare' && areaTwo === 'acre') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 2.471).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareKilometer') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 247).toFixed(3));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareMeter') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 4047).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareMile') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 640).toFixed(3));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareYard') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 4840).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareFoot') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 43560).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'squareInch') {
-        if (value !== '') {
-          setAreaResult((Number(value) * 6273000).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === 'acre' && areaTwo === 'hectare') {
-        if (value !== '') {
-          setAreaResult((Number(value) / 2.471).toFixed(1));
-        } else {
-          setAreaResult('');
-        }
-      } else if (areaOne === areaTwo) {
-        if (value !== '') {
-          setAreaResult(Number(value));
-        } else {
-          setAreaResult('');
-        }
-      } else {
-        if (value !== '') {
-          setAreaResult((Number(value) / 1000000).toFixed(6));
-        } else {
-          setAreaResult('');
-        };
-      };
-    };
-
-    const onChangeArea = (value) => {
-      resultArea(value);
-    };
-
-    const clearArea = () => {
-      setAreaResult(0);
-      areaInput.clear();
-    };
-
-    return (
-      <View style={Styles.areaContainer}>
-        <StatusBar backgroundColor="#003e7f" />
-        <Text style={Styles.areaTitle}>Area</Text>
-        <Text style={Styles.areaCaption}>Select the first measurement</Text>
-        <TextInput keyboardType="numeric" onChangeText={onChangeArea} ref={input => setAreaInput(input)} style={Styles.areaTextInput} />
-        <Picker selectedValue={areaOne} onValueChange={(itemValue) => setAreaOne(itemValue)} style={Styles.areaPicker} >
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
-        </Picker>
-        <Picker selectedValue={areaTwo} onValueChange={(itemValue) => setAreaTwo(itemValue)} style={Styles.areaPicker}>
-          <Picker.Item label="Square Kilometer" value="squareKilometer" />
-          <Picker.Item label="Square Meter" value="squareMeter" />
-          <Picker.Item label="Square Mile" value="squareMile" />
-          <Picker.Item label="Square Yard" value="squareYard" />
-          <Picker.Item label="Square Foot" value="squareFoot" />
-          <Picker.Item label="Square Inch" value="squareInch" />
-          <Picker.Item label="Hectare" value="hectare" />
-          <Picker.Item label="Acre" value="acre" />
-        </Picker>
-        <TouchableOpacity onPress={clearArea} style={Styles.areaButtonClear}>
-          <Text style={Styles.areaButtonClearText}>Clear</Text>
-        </TouchableOpacity>
-        <Text style={Styles.areaResult}>{areaResult !== 0 ? 'The result is: ' : ''}{areaResult !== 0 ? areaResult : ''}</Text>
-        <TouchableOpacity onPress={setScreenHome} style={Styles.backToHomeButton}>
-          <Text style={Styles.backToHomeButtonText}>Go back to Home</Text>
-        </TouchableOpacity>
-      </View>
-    );
+    return <Area setScreen={setScreen} />
   };
 
   function getScreenDigitalStorage() {
@@ -2478,173 +2011,6 @@ export default function App() {
 };
 
 const Styles = StyleSheet.create({
-  homeContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#000000',
-  },
-  homeTitle: {
-    fontSize: 70,
-    fontFamily: 'Montserrat-ExtraBold',
-    color: '#ffffff',
-    marginBottom: 160,
-    marginTop: -40,
-  },
-  homeButtonsContainer: {
-    flexDirection: 'row',
-  },
-  homeButtonArea: {
-    backgroundColor: '#003e7f',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    marginRight: 10,
-    borderRadius: 2,
-  },
-  homeButtonDigitalStorage: {
-    backgroundColor: '#003e7f',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    borderRadius: 2,
-  },
-  homeButtonFrequency: {
-    backgroundColor: '#002966',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    marginRight: 10,
-    borderRadius: 2,
-  },
-  homeButtonLenght: {
-    backgroundColor: '#002966',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    borderRadius: 2,
-  },
-  homeButtonMass: {
-    backgroundColor: '#00154d',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    marginRight: 10,
-    borderRadius: 2,
-  },
-  homeButtonSpeed: {
-    backgroundColor: '#00154d',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    borderRadius: 2,
-  },
-  homeButtonTemperature: {
-    backgroundColor: '#000536',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    marginRight: 10,
-    borderRadius: 2,
-  },
-  homeButtonTime: {
-    backgroundColor: '#000536',
-    width: Dimensions.get('screen').width / 2.5,
-    height: 42,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 2,
-  },
-  homeButtonsText: {
-    fontSize: 18,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff'
-  },
-  backToHomeButton: {
-    width: Dimensions.get('screen').width / 1.1,
-    backgroundColor: '#000',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-    borderRadius: 4,
-  },
-  backToHomeButtonText: {
-    color: '#ffffff',
-    fontSize: 25,
-    fontFamily: 'Montserrat-ExtraBold',
-  },
-  areaContainer: {
-    flex: 1,
-    backgroundColor: '#003e7f',
-  },
-  areaTitle: {
-    fontSize: 60,
-    fontFamily: 'Montserrat-ExtraBold',
-    color: '#ffffff',
-    textAlign: 'center',
-    marginTop: 30,
-    marginBottom: 50,
-  },
-  areaCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
-  },
-  areaTextInput: {
-    backgroundColor: '#ffffff',
-    width: Dimensions.get('screen').width / 1.2,
-    alignSelf: 'center',
-    paddingLeft: 15,
-    fontSize: 18,
-    marginBottom: 20,
-    marginTop: 15,
-    borderRadius: 3,
-    fontFamily: 'Montserrat-Bold',
-  },
-  areaPicker: {
-    color: '#fff',
-  },
-  areaButtonClear: {
-    width: Dimensions.get('screen').width / 4.5,
-    backgroundColor: '#000000',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 42,
-    borderRadius: 15,
-    marginTop: 5,
-  },
-  areaButtonClearText: {
-    color: '#ffffff',
-    fontSize: 22,
-    fontFamily: 'Montserrat-ExtraBold',
-  },
-  areaResult: {
-    color: '#ffffff',
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    paddingLeft: 15,
-    marginTop: 40,
-    marginBottom: 113,
-    alignSelf: 'center',
-  },
   digitalStorageContainer: {
     flex: 1,
     backgroundColor: '#003e7f',
@@ -2654,15 +2020,8 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-ExtraBold',
     color: '#ffffff',
     textAlign: 'center',
-    marginTop: 30,
-    marginBottom: 50,
-  },
-  digitalStorageCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
+    marginTop: 50,
+    marginBottom: 70,
   },
   digitalStorageTextInput: {
     backgroundColor: '#ffffff',
@@ -2699,7 +2058,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 140,
+    marginBottom: 100,
     alignSelf: 'center',
   },
   frequencyContainer: {
@@ -2711,15 +2070,8 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-ExtraBold',
     color: '#ffffff',
     textAlign: 'center',
-    marginTop: 30,
-    marginBottom: 50,
-  },
-  frequencyCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
+    marginTop: 40,
+    marginBottom: 60,
   },
   frequencyTextInput: {
     backgroundColor: '#ffffff',
@@ -2756,7 +2108,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 119,
+    marginBottom: 99,
     alignSelf: 'center',
   },
   lengthContainer: {
@@ -2770,13 +2122,6 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
-  },
-  lengthCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
   },
   lengthTextInput: {
     backgroundColor: '#ffffff',
@@ -2828,13 +2173,6 @@ const Styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 50,
   },
-  massCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
-  },
   massTextInput: {
     backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
@@ -2885,13 +2223,6 @@ const Styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 50,
   },
-  speedCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
-  },
   speedTextInput: {
     backgroundColor: '#ffffff',
     width: Dimensions.get('screen').width / 1.2,
@@ -2939,15 +2270,8 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-ExtraBold',
     color: '#ffffff',
     textAlign: 'center',
-    marginTop: 30,
-    marginBottom: 50,
-  },
-  temperatureCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
+    marginTop: 40,
+    marginBottom: 60,
   },
   temperatureTextInput: {
     backgroundColor: '#ffffff',
@@ -2984,7 +2308,7 @@ const Styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     paddingLeft: 15,
     marginTop: 40,
-    marginBottom: 128,
+    marginBottom: 108,
     alignSelf: 'center',
   },
   timeContainer: {
@@ -2998,13 +2322,6 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
     marginBottom: 50,
-  },
-  timeCaption: {
-    fontSize: 20,
-    fontFamily: 'Montserrat-Bold',
-    color: '#ffffff',
-    paddingLeft: 15,
-    alignSelf: 'center',
   },
   timeTextInput: {
     backgroundColor: '#ffffff',
