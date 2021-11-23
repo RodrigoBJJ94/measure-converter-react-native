@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    massContainer: {
+    timeContainer: {
         flex: 1,
-        backgroundColor: '#00154d',
-    },
+        backgroundColor: '#000536',
+    }
 });

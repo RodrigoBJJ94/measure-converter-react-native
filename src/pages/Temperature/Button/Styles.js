@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    speedButtonClear: {
+    temperatureButtonClear: {
         width: Dimensions.get('screen').width / 4.5,
         backgroundColor: '#000000',
         alignSelf: 'center',
@@ -11,7 +11,7 @@ export default Styles = StyleSheet.create({
         borderRadius: 15,
         marginTop: 5,
     },
-    speedButtonClearText: {
+    temperatureButtonClearText: {
         color: '#ffffff',
         fontSize: 22,
         fontFamily: 'Montserrat-ExtraBold',

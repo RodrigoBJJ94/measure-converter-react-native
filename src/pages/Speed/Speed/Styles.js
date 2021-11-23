@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    speedPicker: {
-        color: '#ffffff',
+    speedContainer: {
+        flex: 1,
+        backgroundColor: '#00154d',
     }
 });

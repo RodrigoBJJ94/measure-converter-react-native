@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    speedResult: {
+    timeResult: {
         color: '#ffffff',
         fontSize: 20,
         fontFamily: 'Montserrat-Bold',

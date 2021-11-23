@@ -3,5 +3,5 @@ import { Text } from 'react-native';
 import Styles from './Styles';
 
 export default function Title() {
-    return <Text style={Styles.speedTitle}>Speed</Text>
+    return <Text style={Styles.temperatureTitle}>Temperature</Text>
 };

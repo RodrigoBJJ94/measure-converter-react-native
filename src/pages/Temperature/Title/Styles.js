@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    speedTitle: {
-        fontSize: 60,
+    temperatureTitle: {
+        fontSize: 48,
         fontFamily: 'Montserrat-ExtraBold',
         color: '#ffffff',
         textAlign: 'center',
-        marginTop: 30,
-        marginBottom: 50,
+        marginTop: 40,
+        marginBottom: 60,
     }
 });

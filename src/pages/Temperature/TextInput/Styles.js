@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export default Styles = StyleSheet.create({
-    speedTextInput: {
+    temperatureTextInput: {
         backgroundColor: '#ffffff',
         width: Dimensions.get('screen').width / 1.2,
         alignSelf: 'center',
