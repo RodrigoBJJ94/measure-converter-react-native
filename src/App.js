@@ -4,7 +4,7 @@ import Area from './pages/Area/Area/Area';
 import DigitalStorage from './pages/DigitalStorage/DigitalStorage/DigitalStorage';
 import Frequency from './pages/Frequency/Frequency/Frequency';
 import Lenght from './pages/Length/Length/Length';
-import Mass from './pages/Speed/Speed/Speed';
+import Mass from './pages/Mass/Mass/Mass';
 import Speed from './pages/Speed/Speed/Speed';
 import Temperature from './pages/Temperature/Temperature/Temperature';
 import Time from './pages/Time/Time/Time';
